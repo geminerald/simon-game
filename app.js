@@ -16,23 +16,24 @@ const userArray = [];
 // Change Colour Function
 
 function beClicked(colour){
-    readout.innerHTML = (`${colour} button is clicked`);
+    readout.innerHTML = (`${colour.id} button is clicked`);
+    console.log(colour.id);
 };
 
 red.addEventListener('click',()=>{
-    beClicked("red");
+    beClicked(red);
 }); 
 
 yellow.addEventListener('click',()=>{
-    beClicked("yellow");
+    beClicked(yellow);
 }); 
 
 green.addEventListener('click',()=>{
-    beClicked("green");
+    beClicked(green);
 }); 
 
 blue.addEventListener('click',()=>{
-    beClicked("blue");
+    beClicked(blue);
 }); 
 
 // Random Number Generator and push to array
