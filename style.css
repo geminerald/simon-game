@@ -15,21 +15,21 @@
 }
 
 #red{
-    background-color: rgba(255, 0, 0, 0.527);
+    background-color: #fc0707;
 }
 
 #blue{ 
-   background-color: rgba(27, 27, 146, 0.678);
+   background-color: #1b1eb4;
 }
 
 #yellow{
-    background-color: rgba(255, 255, 0, 0.582);
+    background-color: #c0dd3c;
 }
 
 #green{
-    background-color: rgba(0, 128, 0, 0.507);
+    background-color: #0a9e3b;
 }
 
 .light-red{
-    background-color: rgb(255, 67, 67);
+    background-color: #ee8989
 }
