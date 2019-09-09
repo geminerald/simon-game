@@ -1,5 +1,7 @@
+const game = () => {
+
 // Colour Selectors
-const btn = document.getElementsByTagName("button");
+const btn = document.querySelectorAll(".button");
 
 const red = document.getElementById("red");
 const yellow = document.getElementById("yellow");
@@ -11,57 +13,37 @@ const readout = document.getElementById("readout");
 // Arrays
 
 const gameArray = [];
-const userArray = [];
 
 // Change Colour Function
 
 function beClicked(colour){
     readout.innerHTML = (`${colour.id} button is clicked`);
-
-    var color = getComputedStyle(colour).backgroundColor;
-    
-    var rgbToHex = function (rgb) { 
-        var hex = Number(rgb).toString(16);
-        if (hex.length < 2) {
-             hex = "0" + hex;
-        }
-        return hex;
-      };
-    
-    var fullColorHex = function(r,g,b) {   
-        var red = rgbToHex(r);
-        var green = rgbToHex(g);
-        var blue = rgbToHex(b);
-        return red+green+blue;
-      };
-
-     // colour.style.backgroundColor = fullColorHex(color) + 500;
-      var testColour = (250, 150, 05);
-      console.log(fullColorHex(testColour));
-
-   // colour.style.backgroundColor = `${getComputedStyle(colour).backgroundColor} + 100`
-
-
-
-    //console.log(getComputedStyle(colour).backgroundColor);
-   // console.log(colour.id);
     
 };
+    
 
 red.addEventListener('click',()=>{
     beClicked(red);
+    red.classList.add('light-red');
+    red.classList.remove('red');
 }); 
 
 yellow.addEventListener('click',()=>{
     beClicked(yellow);
+    yellow.classList.add('light-yellow');
+    yellow.classList.remove('yellow');
 }); 
 
 green.addEventListener('click',()=>{
     beClicked(green);
+    green.classList.add('light-green');
+    green.classList.remove('green');
 }); 
 
 blue.addEventListener('click',()=>{
     beClicked(blue);
+    blue.classList.add('light-blue');
+    blue.classList.remove('blue')
 }); 
 
 // Random Number Generator and push to array
@@ -71,3 +53,6 @@ blue.addEventListener('click',()=>{
 
 
 
+};
+
+game();

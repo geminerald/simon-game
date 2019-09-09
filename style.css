@@ -14,22 +14,34 @@
     cursor: pointer;
 }
 
-#red{
-    background-color: #fc0707;
+.red{
+    background-color: red;
 }
 
-#blue{ 
-   background-color: #1b1eb4;
+.blue{ 
+   background-color: blue;
 }
 
-#yellow{
-    background-color: #c0dd3c;
+.yellow{
+    background-color: yellow;
 }
 
-#green{
-    background-color: #0a9e3b;
+.green{
+    background-color: green;
 }
 
 .light-red{
-    background-color: #ee8989
+    background-color: lightcoral;
+}
+
+.light-blue{
+    background-color: lightblue;
+}
+
+.light-yellow{
+    background-color: lightyellow;
+}
+
+.light-green{
+    background-color: lightgreen;
 }
