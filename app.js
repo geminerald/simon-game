@@ -24,10 +24,9 @@ function beClicked(colour){
     setTimeout(() => {
         colour.classList.add(`${colour.id}`);
         colour.classList.remove(`light-${colour.id}`);
-    },2000)
+    },1000)
 };
     
-
 red.addEventListener('click',()=>{
     beClicked(red);
 }); 
@@ -52,10 +51,10 @@ beginBtn.addEventListener('click', () =>{
 
 
 // For loop from 0 to 20 - begin by intro button, then start functions. 
-    const gameArray = ["blue", "red"];
+    const gameArray = [];
 
 
-    /*for (j = 0; j < 20; j++) {
+    for (j = 0; j < 20; j++) {
 
     // Random Number Generator and push to array
     
@@ -71,20 +70,20 @@ beginBtn.addEventListener('click', () =>{
     
 };
 
-*/
+
 
 // for loop to iterate through game Array automatically
 
 const iterateThroughArray = () => {
-
-    for(var i = 0 ; i < gameArray.length; i++){
-        
+    for(let i = 0 ; i < gameArray.length; i++){
+       
             console.log(gameArray[i]);
-            //console.log(`we are at ${gameArray[i]} and the array is ${gameArray.length} long`);
-            //document.querySelector(`${gameArray[i]}`).click();
-            if(gameArray[i] === "blue"){
+            
+            setTimeout(function(){
+                if(gameArray[i] === "blue"){
                 blue.click();
-            }else if(gameArray[i] === "red"){
+            }
+            else if(gameArray[i] === "red"){
                 red.click();
             }
             else if(gameArray[i] === "yellow"){
@@ -93,6 +92,7 @@ const iterateThroughArray = () => {
             else{
                 green.click();
             }
+        },2000);
     };
 };
 
