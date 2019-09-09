@@ -10,15 +10,21 @@ const blue = document.getElementById("blue");
 
 const readout = document.getElementById("readout");
 
-// Arrays
-
 const gameArray = [];
 
-// Change Colour Function
 
 function beClicked(colour){
     readout.innerHTML = (`${colour.id} button is clicked`);
+    const computerSelection = () => {
+        const computerOptions = ["red", "blue", "yellow" , "green"];
+        const computerNumber = Math.floor(Math.random() * 4)
+        const computerChoice = computerOptions[computerNumber]; 
+        gameArray.push(computerChoice);
+        console.log(computerChoice);
+    };
     
+    computerSelection();
+    console.log(gameArray);    
 };
     
 
@@ -47,6 +53,7 @@ blue.addEventListener('click',()=>{
 }); 
 
 // Random Number Generator and push to array
+
 
 
 
