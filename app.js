@@ -12,10 +12,6 @@ const readout = document.getElementById("readout");
 
 const iterateBtn = document.querySelector('.iterate');
 
-
-
-
-
 // Click events
 
 function beClicked(colour){
@@ -48,29 +44,15 @@ blue.addEventListener('click',()=>{
     blue.classList.remove('blue')
 }); 
 
-// Random Number Generator and push to array
 
 
 
-
-// for loop to iterate through game Array
-
-const iterateThroughArray = () => {
-
-    for(i = 0 ; i < gameArray.length; i++){
-        console.log(gameArray[i]);
-    };
-};
-
-iterateBtn.addEventListener('click', iterateThroughArray);
-
-};
 
 // For loop from 0 to 20 - begin by intro button, then start functions. 
     const gameArray = [];
 for (j = 0; j < 20; j++) {
 
-    
+    // Random Number Generator and push to array
 
     const computerSelection = () => {
         const computerOptions = ["red", "blue", "yellow" , "green"];
@@ -83,7 +65,18 @@ for (j = 0; j < 20; j++) {
     console.log(gameArray);
     
 };
+// for loop to iterate through game Array
 
+const iterateThroughArray = () => {
+
+    for(i = 0 ; i < gameArray.length; i++){
+        console.log(gameArray[i]);
+    };
+};
+
+iterateBtn.addEventListener('click', iterateThroughArray);
+
+};
 
 
 game();
