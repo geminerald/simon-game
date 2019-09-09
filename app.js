@@ -12,6 +12,8 @@ const readout = document.getElementById("readout");
 
 const iterateBtn = document.querySelector('.iterate');
 
+let playerScore = 0;
+
 // Click events
 
 function beClicked(colour){
