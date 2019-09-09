@@ -19,32 +19,29 @@ let playerScore = 0;
 
 function beClicked(colour){
     readout.innerHTML = (`${colour.id} button is clicked`);
-       
+    colour.classList.add(`light-${colour.id}`);
+    colour.classList.remove(`${colour.id}`);
+    setTimeout(() => {
+        colour.classList.add(`${colour.id}`);
+        colour.classList.remove(`light-${colour.id}`);
+    },2000)
 };
     
 
 red.addEventListener('click',()=>{
     beClicked(red);
-    red.classList.add('light-red');
-    red.classList.remove('red');
 }); 
 
 yellow.addEventListener('click',()=>{
     beClicked(yellow);
-    yellow.classList.add('light-yellow');
-    yellow.classList.remove('yellow');
 }); 
 
 green.addEventListener('click',()=>{
     beClicked(green);
-    green.classList.add('light-green');
-    green.classList.remove('green');
 }); 
 
 blue.addEventListener('click',()=>{
     beClicked(blue);
-    blue.classList.add('light-blue');
-    blue.classList.remove('blue')
 }); 
 
 beginBtn.addEventListener('click', () =>{
