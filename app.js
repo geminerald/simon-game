@@ -47,17 +47,15 @@ beginBtn.addEventListener('click', () =>{
     beClicked(beginBtn);
 })
 
-
-
+iterateBtn.addEventListener('click', () => { iterateThroughArray})
 
 // For loop from 0 to 20 - begin by intro button, then start functions. 
-    const gameArray = [];
+const gameArray = [];
 
+for (j = 0; j < 20; j++) {
 
-    for (j = 0; j < 20; j++) {
+// Random Number Generator and push to array
 
-    // Random Number Generator and push to array
-    
     const computerSelection = () => {
         const computerOptions = ["red", "blue", "yellow" , "green"];
         const computerNumber = Math.floor(Math.random() * 4)
@@ -70,17 +68,13 @@ beginBtn.addEventListener('click', () =>{
     
 };
 
-
-
 // for loop to iterate through game Array automatically
 
-const iterateThroughArray = () => {
-    for(let i = 0 ; i < gameArray.length; i++){
-       
-            console.log(gameArray[i]);
-            
-            setTimeout(function(){
-                if(gameArray[i] === "blue"){
+    const iterateThroughArray = () => {
+        for(let i = 0 ; i < gameArray.length; i++){
+        
+                
+            if(gameArray[i] === "blue"){
                 blue.click();
             }
             else if(gameArray[i] === "red"){
@@ -91,14 +85,9 @@ const iterateThroughArray = () => {
             }
             else{
                 green.click();
-            }
-        },2000);
+            }    
+        };
     };
 };
-
-iterateBtn.addEventListener('click', iterateThroughArray);
-
-};
-
 
 game();
