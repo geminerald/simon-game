@@ -52,7 +52,7 @@ iterateBtn.addEventListener('click', () => { iterateThroughArray})
 // For loop from 0 to 20 - begin by intro button, then start functions. 
 const gameArray = [];
 
-for (j = 0; j < 20; j++) {
+
 
 // Random Number Generator and push to array
 
@@ -63,10 +63,6 @@ for (j = 0; j < 20; j++) {
         gameArray.push(computerChoice);
     };
 
-    computerSelection();
-    console.log(gameArray);
-    
-};
 
 // for loop to iterate through game Array automatically
 
@@ -88,6 +84,16 @@ for (j = 0; j < 20; j++) {
             }    
         };
     };
+
+    // Game Order
+
+    
+    const startGame = () => {
+        computerSelection();
+        iterateThroughArray();
+    }
+    
+    beginBtn.addEventListener('click', startGame);
 };
 
 game();
