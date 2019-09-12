@@ -1,55 +1,55 @@
-.container{
-    width : 80%;
+.container {
+    width: 80%;
     height: 80vh;
     margin: 80px auto;
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-.colour{
+.colour {
     height: 200px;
     width: 200px;
-    margin:auto;
+    margin: auto;
     cursor: pointer;
     border-radius: 15em;
 }
 
-.red{
+.red {
     background-color: red;
 }
 
-.blue{ 
-   background-color: blue;
+.blue {
+    background-color: blue;
 }
 
-.yellow{
+.yellow {
     background-color: yellow;
 }
 
-.green{
+.green {
     background-color: green;
 }
 
-.light-red{
+.light-red {
     background-color: lightcoral;
 }
 
-.light-blue{
+.light-blue {
     background-color: lightblue;
 }
 
-.light-yellow{
+.light-yellow {
     background-color: lightyellow;
 }
 
-.light-green{
+.light-green {
     background-color: lightgreen;
 }
 
 
 
-.begin-container{
+.begin-container {
     width: 100%;
     height: 100px;
     z-index: 1;
@@ -57,7 +57,7 @@
     justify-content: space-around;
 }
 
-.begin{
+.begin {
     background-color: slategray;
     color: #fafafa;
     height: 90vh;
@@ -67,18 +67,18 @@
     z-index: 12;
 }
 
-.fadeIn{
+.fadeIn {
     opacity: 1;
 }
 
-.fadeOut{
+.fadeOut {
     opacity: 0;
 }
 
-.no-pointer-events{
+.no-pointer-events {
     pointer-events: none;
 }
 
-.yes-pointer-events{
+.yes-pointer-events {
     pointer-events: all;
 }
