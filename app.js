@@ -1,7 +1,7 @@
 const game = () => {
 
 // Colour Selectors
-const btn = document.querySelectorAll(".button");
+const btn = document.querySelectorAll(".colour");
 
 const red = document.getElementById("red");
 const yellow = document.getElementById("yellow");
@@ -30,10 +30,12 @@ function beClicked(colour){
 };
    
 // Come back to this and see if can get it to work - much more efficient
+
 /*
 btn.addEventListener('click',function(){
     beClicked(this.id);
 })
+
 */
 
 red.addEventListener('click',()=>{
@@ -51,7 +53,6 @@ green.addEventListener('click',()=>{
 blue.addEventListener('click',()=>{
     beClicked(blue);
 }); 
-
 // Random Number Generator and push to array
 
     function computerSelection(){
@@ -102,14 +103,30 @@ const iterateThroughArray = () => {
 };
     
 
+    // User Entry - match to array - get gameArray[i] - user has to select correct option - if so then gameArray[i] ++ , else Error Fail! - restart
+    const playerTurn = () => {
+    for(j = 0 ; j < gameArray.length ; j++){
+        let playerIndex = gameArray[j];
+        if(playerIndex.beClicked()){
+            computerSelection();
+        iterateThroughArray();
+        console.log(gameArray);
+        }else{
+            alert("Fail!");
+        }
+    };
+    };
+
+
     // Game Order
 
     function startGame(){
+        beginBtn.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
         console.log(gameArray);
-        beginBtn.classList.add('fadeOut');
     };
+
 
 
     beginBtn.addEventListener('click', startGame);

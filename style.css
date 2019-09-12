@@ -74,3 +74,11 @@
 .fadeOut{
     opacity: 0;
 }
+
+.no-pointer-events{
+    pointer-events: none;
+}
+
+.yes-pointer-events{
+    pointer-events: all;
+}
