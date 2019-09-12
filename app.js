@@ -85,21 +85,21 @@ blue.addEventListener('click',()=>{
 
 // Iterate through array
 const iterateThroughArray = () => {
-            var i = 0;
-            var iteration =
-             setInterval(function(){
-               if(i === gameArray.length){
-                  clearInterval(iteration);
-                  console.log("for the love of God - stop!");
-               }
-               else{
-               console.log(`the index is ${i}`);
-               console.log(`the colour is ${gameArray[i]}`);
-               checkColour(gameArray,i);
-               i++
+    var i = 0;
+    var iteration =
+        setInterval(function(){
+            if(i === gameArray.length){
+                clearInterval(iteration);
+                console.log("for the love of God - stop!");
+            }
+            else{
+            console.log(`the index is ${i}`);
+            console.log(`the colour is ${gameArray[i]}`);
+            checkColour(gameArray,i);
+            i++
             };
-            }, 1500);
-        };
+        }, 1500);
+};
     
 
     // Game Order
