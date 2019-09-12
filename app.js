@@ -96,9 +96,9 @@ const iterateThroughArray = () => {
                console.log(`the index is ${i}`);
                console.log(`the colour is ${gameArray[i]}`);
                checkColour(gameArray,i);
-               i++};
-            }, 1000);
-        
+               i++
+            };
+            }, 1500);
         };
     
 
@@ -108,6 +108,7 @@ const iterateThroughArray = () => {
         computerSelection();
         iterateThroughArray();
         console.log(gameArray);
+        beginBtn.classList.add('fadeOut');
     };
 
 
