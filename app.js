@@ -108,8 +108,7 @@ const iterateThroughArray = () => {
     for(j = 0 ; j < gameArray.length ; j++){
         let playerIndex = gameArray[j];
         if(playerIndex.beClicked()){
-            computerSelection();
-        iterateThroughArray();
+            
         console.log(gameArray);
         }else{
             alert("Fail!");
