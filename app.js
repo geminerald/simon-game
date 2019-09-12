@@ -10,10 +10,12 @@ const blue = document.getElementById("blue");
 
 const readout = document.getElementById("readout");
 
-const iterateBtn = document.querySelector('.iterate');
 const beginBtn = document.querySelector('.begin');
 
+// Game array and score button
+
 let playerScore = 0;
+const gameArray = [];
 
 // Click events
 
@@ -43,20 +45,13 @@ blue.addEventListener('click',()=>{
     beClicked(blue);
 }); 
 
-beginBtn.addEventListener('click', () =>{
-    beClicked(beginBtn);
-})
-
-iterateBtn.addEventListener('click', () => { iterateThroughArray})
 
 // For loop from 0 to 20 - begin by intro button, then start functions. 
-const gameArray = [];
-
 
 
 // Random Number Generator and push to array
 
-    const computerSelection = () => {
+    function computerSelection(){
         const computerOptions = ["red", "blue", "yellow" , "green"];
         const computerNumber = Math.floor(Math.random() * 4)
         const computerChoice = computerOptions[computerNumber]; 
@@ -68,32 +63,39 @@ const gameArray = [];
 
     const iterateThroughArray = () => {
         for(let i = 0 ; i < gameArray.length; i++){
-        
-                
-            if(gameArray[i] === "blue"){
-                blue.click();
-            }
-            else if(gameArray[i] === "red"){
-                red.click();
-            }
-            else if(gameArray[i] === "yellow"){
-                yellow.click();
-            }
-            else{
-                green.click();
-            }    
+
+            var toBeChecked = gameArray[i];
+
+            const checkColour = (entry) => {
+                if(entry === "blue"){
+                    blue.click();
+                }
+                else if(entry === "red"){
+                    red.click();
+                }
+                else if(entry === "yellow"){
+                    yellow.click();
+                }
+                else if(entry === "green"){
+                    green.click();
+                }
+                else{
+                    console.log("Ya done messed up son");
+                }
+            };
+            
+            setTimeout(checkColour(toBeChecked),2000);
         };
     };
 
     // Game Order
 
-    
-    const startGame = () => {
+    function startGame(){
         computerSelection();
         iterateThroughArray();
-    }
+        console.log(gameArray);
+    };
     
     beginBtn.addEventListener('click', startGame);
 };
-
 game();
