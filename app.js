@@ -28,7 +28,14 @@ function beClicked(colour){
         colour.classList.remove(`light-${colour.id}`);
     },1000)
 };
-    
+   
+// Come back to this and see if can get it to work - much more efficient
+/*
+btn.addEventListener('click',function(){
+    beClicked(this.id);
+})
+*/
+
 red.addEventListener('click',()=>{
     beClicked(red);
 }); 
@@ -45,33 +52,25 @@ blue.addEventListener('click',()=>{
     beClicked(blue);
 }); 
 
-
-// For loop from 0 to 20 - begin by intro button, then start functions. 
-
-
 // Random Number Generator and push to array
 
     function computerSelection(){
         const computerOptions = ["red", "blue", "yellow" , "green"];
-        const computerNumber = Math.floor(Math.random() * 4)
+        const computerNumber = Math.floor(Math.random() * computerOptions.length)
         const computerChoice = computerOptions[computerNumber]; 
         gameArray.push(computerChoice);
     };
 
-
 // for loop to iterate through game Array automatically
 
-    const iterateThroughArray = () => {
-        for(let i = 0 ; i < gameArray.length; i++){
-
-            var toBeChecked = gameArray[i];
-
-            const checkColour = (entry) => {
+    function checkColour(array,index){
+            let entry = array[index];
+            //function checkColour(entry){
                 if(entry === "blue"){
                     blue.click();
                 }
                 else if(entry === "red"){
-                    red.click();
+                   red.click();
                 }
                 else if(entry === "yellow"){
                     yellow.click();
@@ -83,10 +82,25 @@ blue.addEventListener('click',()=>{
                     console.log("Ya done messed up son");
                 }
             };
-            
-            setTimeout(checkColour(toBeChecked),2000);
+
+// Iterate through array
+const iterateThroughArray = () => {
+            var i = 0;
+            var iteration =
+             setInterval(function(){
+               if(i === gameArray.length){
+                  clearInterval(iteration);
+                  console.log("for the love of God - stop!");
+               }
+               else{
+               console.log(`the index is ${i}`);
+               console.log(`the colour is ${gameArray[i]}`);
+               checkColour(gameArray,i);
+               i++};
+            }, 1000);
+        
         };
-    };
+    
 
     // Game Order
 
@@ -95,7 +109,8 @@ blue.addEventListener('click',()=>{
         iterateThroughArray();
         console.log(gameArray);
     };
-    
+
+
     beginBtn.addEventListener('click', startGame);
 };
 game();
