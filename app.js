@@ -1,16 +1,13 @@
 const game = () => {
 
     // Colour Selectors
-    const btn = document.querySelectorAll(".colour");
-
     const red = document.getElementById("red");
     const yellow = document.getElementById("yellow");
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
+    const myTurn = document.getElementById('my-turn');
 
-    const readout = document.getElementById("readout");
-
-    const beginBtn = document.querySelector('.begin');
+    const beginBtn = document.getElementById('begin');
 
     // Game array and score button
 
@@ -20,7 +17,6 @@ const game = () => {
     // Click events
 
     function beClicked(colour) {
-        readout.innerHTML = (`${colour.id} button is clicked`);
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
         setTimeout(() => {
@@ -65,6 +61,7 @@ const game = () => {
     // for loop to iterate through game Array automatically
 
     function checkColour(array, index) {
+
         let entry = array[index];
         //function checkColour(entry){
         if (entry === "blue") {
@@ -78,6 +75,7 @@ const game = () => {
         } else {
             console.log("Ya done messed up son");
         }
+
     };
 
     // Iterate through array
@@ -89,8 +87,7 @@ const game = () => {
                     clearInterval(iteration);
                     console.log("for the love of God - stop!");
                 } else {
-                    console.log(`the index is ${i}`);
-                    console.log(`the colour is ${gameArray[i]}`);
+                    console.log(`running iterateThroughArray and the index is ${i}`);
                     checkColour(gameArray, i);
                     i++
                 };
@@ -100,29 +97,55 @@ const game = () => {
 
     // User Entry - match to array - get gameArray[i] - user has to select correct option - if so then gameArray[i] ++ , else Error Fail! - restart
     const playerTurn = () => {
-        for (j = 0; j < gameArray.length; j++) {
-            let playerIndex = gameArray[j];
-            if (playerIndex.beClicked()) {
+        if (red.beClicked || blue.beClicked || yellow.beClicked || green.beClicked) {
 
-                console.log(gameArray);
-            } else {
-                alert("Fail!");
-            }
-        };
+            console.log("this is working");
+        } else {
+            alert("Fail!");
+        }
     };
 
-
     // Game Order
+
+    // Start game
 
     function startGame() {
         beginBtn.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
         console.log(gameArray);
+        console.log('I am running startGame')
     };
 
 
 
+
+
+
+    /* 
+    
+    Continue Game
+    
+    player entry
+
+        game waits for button to be clicked
+
+        either move on or reset based on entry
+
+        repeat for entire array  For Each loop?
+
+            gameArray.forEach(myFunction);
+
+    get new number to array
+
+    play new array
+
+    repeat until X number of iterations (10 to be easy - allow controllable for max points?)
+
+    */
+
+
     beginBtn.addEventListener('click', startGame);
+    myTurn.addEventListener('click', gameArray.forEach(playerTurn));
 };
 game();

@@ -73,6 +73,7 @@
 
 .fadeOut {
     opacity: 0;
+    z-index: -5;
 }
 
 .no-pointer-events {
