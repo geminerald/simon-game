@@ -11,8 +11,9 @@ const game = () => {
 
     // Game array and score button
 
-    let playerScore = 0;
+    let playerScore = playerArray.length;
     const gameArray = [];
+    const playerArray = [];
 
     // Click events
 
@@ -97,11 +98,20 @@ const game = () => {
 
     // User Entry - match to array - get gameArray[i] - user has to select correct option - if so then gameArray[i] ++ , else Error Fail! - restart
     const playerTurn = () => {
-        if (red.beClicked || blue.beClicked || yellow.beClicked || green.beClicked) {
+        if (playerArray.length < gameArray.length) {
+            console.log("running playerTurn");
 
-            console.log("this is working");
+            function playerEntry(colour) {
+                console.log(`${colour.id} is clicked`);
+                playerArray.push(`${colour.id}`);
+            }
+            blue.addEventListener('click', playerEntry(blue));
+            red.addEventListener('click', playerEntry(red));
+            yellow.addEventListener('click', playerEntry(yellow));
+            green.addEventListener('click', playerEntry(green));
+            console.log(playerArray);
         } else {
-            alert("Fail!");
+            alert("Computers turn!");
         }
     };
 
@@ -123,7 +133,16 @@ const game = () => {
 
 
     /* 
-    
+
+
+        
+
+
+
+
+
+
+
     Continue Game
     
     player entry
@@ -134,6 +153,11 @@ const game = () => {
 
         repeat for entire array  For Each loop?
 
+
+            myFunction(colour){
+                ${colour}.addEventlistener(click, Alert Win!)
+
+            }
             gameArray.forEach(myFunction);
 
     get new number to array
@@ -146,6 +170,6 @@ const game = () => {
 
 
     beginBtn.addEventListener('click', startGame);
-    myTurn.addEventListener('click', gameArray.forEach(playerTurn));
+    myTurn.addEventListener('click', playerTurn);
 };
 game();
