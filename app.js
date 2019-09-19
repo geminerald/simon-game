@@ -11,9 +11,9 @@ const game = () => {
 
     // Game array and score button
 
-    let playerScore = playerArray.length;
     const gameArray = [];
     const playerArray = [];
+    let playerScore = playerArray.length;
 
     // Click events
 
@@ -59,7 +59,7 @@ const game = () => {
         gameArray.push(computerChoice);
     };
 
-    // for loop to iterate through game Array automatically
+    //  iterate through Array automatically
 
     function checkColour(array, index) {
 
@@ -88,30 +88,36 @@ const game = () => {
                     clearInterval(iteration);
                     console.log("for the love of God - stop!");
                 } else {
-                    console.log(`running iterateThroughArray and the index is ${i}`);
+                    console.log(`running iterateThroughArray and the index is ${i} and the game array is ${gameArray}`);
                     checkColour(gameArray, i);
                     i++
                 };
             }, 1500);
     };
 
-
     // User Entry - match to array - get gameArray[i] - user has to select correct option - if so then gameArray[i] ++ , else Error Fail! - restart
     const playerTurn = () => {
         if (playerArray.length < gameArray.length) {
             console.log("running playerTurn");
 
-            function playerEntry(colour) {
-                console.log(`${colour.id} is clicked`);
-                playerArray.push(`${colour.id}`);
-            }
-            blue.addEventListener('click', playerEntry(blue));
-            red.addEventListener('click', playerEntry(red));
-            yellow.addEventListener('click', playerEntry(yellow));
-            green.addEventListener('click', playerEntry(green));
-            console.log(playerArray);
+            blue.addEventListener('click', (() => {
+                playerArray.push("blue")
+            }));
+            red.addEventListener('click', (() => {
+                playerArray.push("red")
+            }));
+            yellow.addEventListener('click', (() => {
+                playerArray.push("yellow")
+            }));
+            green.addEventListener('click', (() => {
+                playerArray.push("green")
+            }));
         } else {
-            alert("Computers turn!");
+            computerSelection();
+            iterateThroughArray();
+            console.log("This is the second iteration");
+            
+            console.log(playerArray);
         }
     };
 
@@ -123,51 +129,8 @@ const game = () => {
         beginBtn.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
-        console.log(gameArray);
-        console.log('I am running startGame')
+        console.log(`I am running startGame and the game array is ${gameArray}`)
     };
-
-
-
-
-
-
-    /* 
-
-
-        
-
-
-
-
-
-
-
-    Continue Game
-    
-    player entry
-
-        game waits for button to be clicked
-
-        either move on or reset based on entry
-
-        repeat for entire array  For Each loop?
-
-
-            myFunction(colour){
-                ${colour}.addEventlistener(click, Alert Win!)
-
-            }
-            gameArray.forEach(myFunction);
-
-    get new number to array
-
-    play new array
-
-    repeat until X number of iterations (10 to be easy - allow controllable for max points?)
-
-    */
-
 
     beginBtn.addEventListener('click', startGame);
     myTurn.addEventListener('click', playerTurn);
