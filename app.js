@@ -28,12 +28,10 @@ const game = () => {
 
     // Come back to this and see if can get it to work - much more efficient
 
-    /*
-    btn.addEventListener('click',function(){
-        beClicked(this.id);
-    })
+    
+    $(".colour").click(beClicked(this.id));
 
-    */
+    /*
 
     red.addEventListener('click', () => {
         beClicked(red);
@@ -50,6 +48,9 @@ const game = () => {
     blue.addEventListener('click', () => {
         beClicked(blue);
     });
+
+    */
+
     // Random Number Generator and push to array
 
     function computerSelection() {
@@ -101,22 +102,26 @@ const game = () => {
             console.log("running playerTurn");
 
             blue.addEventListener('click', (() => {
-                playerArray.push("blue")
+                playerArray.push("blue");
+                return playerArray;
             }));
             red.addEventListener('click', (() => {
-                playerArray.push("red")
+                playerArray.push("red");
+                return playerArray;
             }));
             yellow.addEventListener('click', (() => {
-                playerArray.push("yellow")
+                playerArray.push("yellow");
+                return playerArray;
             }));
             green.addEventListener('click', (() => {
-                playerArray.push("green")
+                playerArray.push("green");
+                return playerArray;
             }));
         } else {
             computerSelection();
             iterateThroughArray();
             console.log("This is the second iteration");
-            
+
             console.log(playerArray);
         }
     };
