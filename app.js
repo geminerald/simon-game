@@ -11,9 +11,9 @@ const game = () => {
 
     // Game array and score button
 
-    const gameArray = [];
+    let gameArray = [];
     let playerArray = [];
-    let playerScore = playerArray.length;
+    let playerScore = 0;
 
     // Click events
 
@@ -35,6 +35,12 @@ const game = () => {
         console.log(id);
         playerArray.push(id);
         console.log(`the player array is ${playerArray}`);
+        if (!arrayValidator()){
+            alert("WHoops!");
+            gameArray = [];
+            computerSelection();
+            iterateThroughArray();
+        }
         if (playerArray.length == gameArray.length) {
             console.log("computers turn");
             computerSelection();
@@ -90,8 +96,17 @@ const game = () => {
             }, 1500);
     };
 
-    
 
+    // check if player array matches with computer array
+
+    function arrayValidator() {
+        for (i = 0; i < playerArray.length; i++) {
+            if (playerArray[i] != gameArray[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
     // Game Order
 
     // Start game
