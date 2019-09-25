@@ -5,18 +5,17 @@ const game = () => {
     const yellow = document.getElementById("yellow");
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
-    let playerScore = 0;
-    
     const beginBtn = document.getElementById('begin');
+    const readout = document.getElementById("readout");
 
     // Game array and score button
 
     let gameArray = [];
     let playerArray = [];
-    
+    let playerScore = 0;
 
-    const readout = document.getElementById("readout")
     readout.innerHTML = playerScore;
+
     // Sounds
 
     const sounds = [
@@ -26,8 +25,6 @@ const game = () => {
         "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav",
         "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav",
         "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav",
-
-
     ];
 
     // Click events
@@ -40,17 +37,17 @@ const game = () => {
             colour.classList.remove(`light-${colour.id}`);
         }, 1000)
     };
-
-    // Come back to this and see if can get it to work - much more efficient
-
+    // Main Game Function:
 
     $(".colour").click(function () {
-        
+
         id = $(this).attr("id");
         console.log(id);
+        console.log(`this is ${this}`);
+        console.log(this.id);
         playerArray.push(id);
         console.log(`the player array is ${playerArray}`);
-        if (!arrayValidator()){
+        if (!arrayValidator()) {
             alert("WHoops!");
             gameArray = [];
             playerArray = [];
@@ -66,9 +63,6 @@ const game = () => {
             iterateThroughArray();
             playerArray = [];
             console.log(`the player array is ${playerArray}`);
-            
-
-    
         }
     });
 
@@ -90,12 +84,21 @@ const game = () => {
 
         if (entry === "blue") {
             beClicked(blue);
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
+            sound.play();
+
         } else if (entry === "red") {
             beClicked(red);
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
+            sound.play();
         } else if (entry === "yellow") {
             beClicked(yellow);
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
+            sound.play();
         } else if (entry === "green") {
             beClicked(green);
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
+            sound.play();
         } else {
             console.log("Ya done messed up son");
         }
