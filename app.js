@@ -41,32 +41,9 @@ const game = () => {
             iterateThroughArray();
             playerArray = [];
             console.log(`the player array is ${playerArray}`);
-        } 
-           
-
-
-        
+        }
     });
 
-    /*
-
-    red.addEventListener('click', () => {
-        beClicked(red);
-    });
-
-    yellow.addEventListener('click', () => {
-        beClicked(yellow);
-    });
-
-    green.addEventListener('click', () => {
-        beClicked(green);
-    });
-
-    blue.addEventListener('click', () => {
-        beClicked(blue);
-    });
-
-    */
 
     // Random Number Generator and push to array
 
@@ -82,7 +59,6 @@ const game = () => {
     function checkColour(array, index) {
 
         let entry = array[index];
-
 
         if (entry === "blue") {
             beClicked(blue);
@@ -114,35 +90,7 @@ const game = () => {
             }, 1500);
     };
 
-    // User Entry - match to array - get gameArray[i] - user has to select correct option - if so then gameArray[i] ++ , else Error Fail! - restart
-    const playerTurn = () => {
-        if (playerArray.length < gameArray.length) {
-            console.log("running playerTurn");
-
-            blue.addEventListener('click', (() => {
-                playerArray.push("blue");
-                return playerArray;
-            }));
-            red.addEventListener('click', (() => {
-                playerArray.push("red");
-                return playerArray;
-            }));
-            yellow.addEventListener('click', (() => {
-                playerArray.push("yellow");
-                return playerArray;
-            }));
-            green.addEventListener('click', (() => {
-                playerArray.push("green");
-                return playerArray;
-            }));
-        } else {
-            computerSelection();
-            iterateThroughArray();
-            console.log("This is the second iteration");
-
-            console.log(playerArray);
-        }
-    };
+    
 
     // Game Order
 
@@ -156,6 +104,5 @@ const game = () => {
     };
 
     beginBtn.addEventListener('click', startGame);
-    myTurn.addEventListener('click', playerTurn);
 };
 game();
