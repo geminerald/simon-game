@@ -12,7 +12,7 @@ const game = () => {
     // Game array and score button
 
     const gameArray = [];
-    const playerArray = [];
+    let playerArray = [];
     let playerScore = playerArray.length;
 
     // Click events
@@ -28,8 +28,22 @@ const game = () => {
 
     // Come back to this and see if can get it to work - much more efficient
 
-    
-    $(".colour").click(beClicked(this.id));
+
+    $(".colour").click(function () {
+        if (playerArray.length = gameArray.length) {
+            console.log("computers turn");
+            computerSelection();
+            iterateThroughArray();
+            playerArray = [];
+            console.log(`the player array is ${playerArray}`);
+        } else {
+            id = $(this).attr("id");
+            playerArray.push(id);
+            console.log(`the player array is ${playerArray}`);
+
+
+        }
+    });
 
     /*
 
@@ -65,15 +79,16 @@ const game = () => {
     function checkColour(array, index) {
 
         let entry = array[index];
-        //function checkColour(entry){
+
+
         if (entry === "blue") {
-            blue.beClicked();
+            beClicked(blue);
         } else if (entry === "red") {
-            red.beClicked();
+            beClicked(red);
         } else if (entry === "yellow") {
-            yellow.beClicked();
+            beClicked(yellow);
         } else if (entry === "green") {
-            green.beClicked();
+            beClicked(green);
         } else {
             console.log("Ya done messed up son");
         }
