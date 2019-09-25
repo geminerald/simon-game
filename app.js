@@ -5,15 +5,30 @@ const game = () => {
     const yellow = document.getElementById("yellow");
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
-    const myTurn = document.getElementById('my-turn');
-
+    let playerScore = 0;
+    
     const beginBtn = document.getElementById('begin');
 
     // Game array and score button
 
     let gameArray = [];
     let playerArray = [];
-    let playerScore = 0;
+    
+
+    const readout = document.getElementById("readout")
+    readout.innerHTML = playerScore;
+    // Sounds
+
+    const sounds = [
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav",
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav",
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav",
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav",
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav",
+        "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav",
+
+
+    ];
 
     // Click events
 
@@ -30,7 +45,7 @@ const game = () => {
 
 
     $(".colour").click(function () {
-
+        
         id = $(this).attr("id");
         console.log(id);
         playerArray.push(id);
@@ -38,15 +53,22 @@ const game = () => {
         if (!arrayValidator()){
             alert("WHoops!");
             gameArray = [];
+            playerArray = [];
+            playerScore = 0;
             computerSelection();
             iterateThroughArray();
+            return
         }
         if (playerArray.length == gameArray.length) {
             console.log("computers turn");
+            playerScore++
             computerSelection();
             iterateThroughArray();
             playerArray = [];
             console.log(`the player array is ${playerArray}`);
+            
+
+    
         }
     });
 
