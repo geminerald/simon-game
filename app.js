@@ -30,19 +30,22 @@ const game = () => {
 
 
     $(".colour").click(function () {
-        if (playerArray.length = gameArray.length) {
+
+        id = $(this).attr("id");
+        console.log(id);
+        playerArray.push(id);
+        console.log(`the player array is ${playerArray}`);
+        if (playerArray.length == gameArray.length) {
             console.log("computers turn");
             computerSelection();
             iterateThroughArray();
             playerArray = [];
             console.log(`the player array is ${playerArray}`);
-        } else {
-            id = $(this).attr("id");
-            playerArray.push(id);
-            console.log(`the player array is ${playerArray}`);
+        } 
+           
 
 
-        }
+        
     });
 
     /*
