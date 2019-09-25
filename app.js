@@ -67,13 +67,13 @@ const game = () => {
         let entry = array[index];
         //function checkColour(entry){
         if (entry === "blue") {
-            blue.click();
+            blue.beClicked();
         } else if (entry === "red") {
-            red.click();
+            red.beClicked();
         } else if (entry === "yellow") {
-            yellow.click();
+            yellow.beClicked();
         } else if (entry === "green") {
-            green.click();
+            green.beClicked();
         } else {
             console.log("Ya done messed up son");
         }
