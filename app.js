@@ -60,22 +60,22 @@ const game = () => {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
         if (colour === blue) {
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
+            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === yellow) {
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
+            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === green) {
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
+            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === red) {
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
+            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
             sound.play();
             sound.volume = 0.2;
         };
@@ -145,8 +145,6 @@ const game = () => {
 
         } else if (entry === "purple") {
             beClicked(purple);
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
-            sound.play();
         } else {
             console.log("Ya done messed up son");
         }
@@ -155,8 +153,8 @@ const game = () => {
 
     // Iterate through array
     const iterateThroughArray = () => {
-        var i = 0;
-        var iteration =
+        let i = 0;
+        let iteration =
             setInterval(function () {
                 if (i === gameArray.length) {
                     clearInterval(iteration);
