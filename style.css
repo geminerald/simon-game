@@ -47,6 +47,13 @@
     background-color: lightgreen;
 }
 
+.purple {
+    color: purple;
+}
+
+.light-purple {
+    color: lavender;
+}
 
 
 .begin-container {
@@ -82,4 +89,12 @@
 
 .yes-pointer-events {
     pointer-events: all;
+}
+
+.disappeared{
+    display: none;
+}
+
+.appeared{
+    display: block;
 }

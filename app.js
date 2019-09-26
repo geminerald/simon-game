@@ -5,27 +5,56 @@ const game = () => {
     const yellow = document.getElementById("yellow");
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
+    const purple = document.getElementById("purple");
+
     const beginBtn = document.getElementById('begin');
     const readout = document.getElementById("readout");
+
+    const computerOptions = ["red", "blue", "yellow", "green"];
+
+
 
     // Game array and score button
 
     let gameArray = [];
     let playerArray = [];
     let playerScore = 0;
+    let difficultyLevel = 5;
 
     readout.innerHTML = playerScore;
 
+    function setDifficulty() {
+        if (difficultyLevel = 2) {
+            purple.classList.add(".disappeared");
+            yellow.classList.add(".disappeared");
+            green.classList.add(".disappeared");
+        }
+        if (difficultyLevel = 3) {
+            computerOptions.push("yellow");
+            purple.classList.add(".disappeared");
+            green.classList.add(".disappeared");
+        };
+        if (difficultyLevel = 4) {
+            computerOptions.push("yellow", "green");
+            purple.classList.add(".disappeared");
+        }
+        if (difficultyLevel = 5) {
+            computerOptions.push("yellow", "green", "orange");
+            purple.classList.add(".disappeared");
+        }
+        if (difficultyLevel = 6) {
+            computerOptions.push("yellow", "green", "orange", "purple");
+        }
+    }
     // Sounds
-
-    const sounds = [
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav",
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav",
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav",
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav",
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav",
-        "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav",
-    ];
+    /*
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav",
+    */
 
     // Click events
 
@@ -70,7 +99,10 @@ const game = () => {
     // Random Number Generator and push to array
 
     function computerSelection() {
-        const computerOptions = ["red", "blue", "yellow", "green"];
+
+
+
+        console.log(computerOptions);
         const computerNumber = Math.floor(Math.random() * computerOptions.length)
         const computerChoice = computerOptions[computerNumber];
         gameArray.push(computerChoice);
@@ -97,6 +129,10 @@ const game = () => {
             sound.play();
         } else if (entry === "green") {
             beClicked(green);
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
+            sound.play();
+        } else if (entry === "purple") {
+            beClicked(purple);
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
             sound.play();
         } else {
