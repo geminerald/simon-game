@@ -12,14 +12,12 @@ const game = () => {
 
     const computerOptions = ["red", "blue", "yellow", "green"];
 
-
-
     // Game array and score button
 
     let gameArray = [];
     let playerArray = [];
     let playerScore = 0;
-    let difficultyLevel = 5;
+    let difficultyLevel = 4;
 
     readout.innerHTML = playerScore;
 
@@ -48,12 +46,12 @@ const game = () => {
     }
     // Sounds
     /*
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav",
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav",
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav",
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav",
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav",
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav",
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav"
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav"
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav"
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav"
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav"
+            "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav"
     */
 
     // Click events
@@ -61,21 +59,25 @@ const game = () => {
     function beClicked(colour) {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
-        if(colour === blue){
+        if (colour === blue) {
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
-            sound.play();console.log("this could be a sound file");
+            sound.play();
+            sound.volume = 0.2;
         };
-        if (colour === yellow){
+        if (colour === yellow) {
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
             sound.play();
+            sound.volume = 0.2;
         };
-        if (colour === green){
+        if (colour === green) {
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
             sound.play();
+            sound.volume = 0.2;
         };
-        if (colour === red){
+        if (colour === red) {
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
             sound.play();
+            sound.volume = 0.2;
         };
         setTimeout(() => {
             colour.classList.add(`${colour.id}`);
@@ -134,13 +136,13 @@ const game = () => {
             beClicked(blue);
         } else if (entry === "red") {
             beClicked(red);
-            
+
         } else if (entry === "yellow") {
             beClicked(yellow);
-            
+
         } else if (entry === "green") {
             beClicked(green);
-            
+
         } else if (entry === "purple") {
             beClicked(purple);
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
@@ -174,8 +176,8 @@ const game = () => {
         for (i = 0; i < playerArray.length; i++) {
             if (playerArray[i] != gameArray[i]) {
                 return false;
-            }
-        }
+            };
+        };
         return true;
     };
     // Game Order
