@@ -40,7 +40,7 @@ const game = () => {
     // Main Game Function:
 
     $(".colour").click(function () {
-
+        beClicked(this);
         id = $(this).attr("id");
         console.log(id);
         console.log(`this is ${this}`);
