@@ -61,6 +61,22 @@ const game = () => {
     function beClicked(colour) {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
+        if(colour === blue){
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
+            sound.play();console.log("this could be a sound file");
+        };
+        if (colour === yellow){
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
+            sound.play();
+        };
+        if (colour === green){
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
+            sound.play();
+        };
+        if (colour === red){
+            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
+            sound.play();
+        };
         setTimeout(() => {
             colour.classList.add(`${colour.id}`);
             colour.classList.remove(`light-${colour.id}`);
@@ -116,21 +132,15 @@ const game = () => {
 
         if (entry === "blue") {
             beClicked(blue);
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
-            sound.play();
-
         } else if (entry === "red") {
             beClicked(red);
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
-            sound.play();
+            
         } else if (entry === "yellow") {
             beClicked(yellow);
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
-            sound.play();
+            
         } else if (entry === "green") {
             beClicked(green);
-            var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
-            sound.play();
+            
         } else if (entry === "purple") {
             beClicked(purple);
             var sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
