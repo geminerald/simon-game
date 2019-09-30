@@ -1,20 +1,76 @@
+/*-----------------------------------------------------Universals*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-----------------------------------------------------page structure*/
+
 .container {
     width: 80%;
     height: 80vh;
-    margin: 80px auto;
+    margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .colour {
-    height: 200px;
-    width: 200px;
+    height: 10em;
+    width: 80%;
     margin: auto;
     cursor: pointer;
-    border-radius: 15em;
+    border-radius: 1em;
 }
 
+.begin-container {
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.begin {
+    background-color: slategray;
+    color: #fafafa;
+    height: 90vh;
+    width: 90%;
+    border-radius: 2em;
+    transition: 1s ease-in-out;
+    z-index: 12;
+}
+
+/*-----------------------------------------------------Location Changes*/
+
+.fadeIn {
+    opacity: 1;
+}
+
+.fadeOut {
+    opacity: 0;
+    z-index: -5;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.yes-pointer-events {
+    pointer-events: all;
+}
+
+.disappeared {
+    display: none;
+}
+
+.appeared {
+    display: block;
+}
+
+/*-----------------------------------------------------Colours*/
 .red {
     background-color: red;
 }
@@ -55,53 +111,17 @@
     background-color: lavender;
 }
 
-.orange{
+.orange {
     background-color: orange;
 }
 
-.light-orange{
+.light-orange {
     background-color: lightsalmon;
 }
 
-.begin-container {
-    width: 100%;
-    height: 100px;
-    z-index: 1;
-    display: flex;
-    justify-content: space-around;
-}
-
-.begin {
-    background-color: slategray;
-    color: #fafafa;
-    height: 90vh;
-    width: 90%;
-    border-radius: 2em;
-    transition: 1s ease-in-out;
-    z-index: 12;
-}
-
-.fadeIn {
-    opacity: 1;
-}
-
-.fadeOut {
-    opacity: 0;
-    z-index: -5;
-}
-
-.no-pointer-events {
-    pointer-events: none;
-}
-
-.yes-pointer-events {
-    pointer-events: all;
-}
-
-.disappeared{
-    display: none;
-}
-
-.appeared{
-    display: block;
+/*-----------------------------------------------------Media Queries*/
+@media only screen and (max-height: 1000px) {
+    .colour {
+        height: 7em;
+    }
 }
