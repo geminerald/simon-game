@@ -22,27 +22,35 @@ const game = () => {
     readout.innerHTML = playerScore;
 
     function setDifficulty() {
-        if (difficultyLevel = 2) {
-            purple.classList.add(".disappeared");
-            yellow.classList.add(".disappeared");
-            green.classList.add(".disappeared");
+
+        switch (difficultyLevel) {
+            case 2:
+                purple.classList.add(".disappeared");
+                yellow.classList.add(".disappeared");
+                green.classList.add(".disappeared");
+                break;
+
+            case 3:
+                computerOptions.push("yellow");
+                purple.classList.add(".disappeared");
+                green.classList.add(".disappeared");
+                break;
+
+            case 4:
+                computerOptions.push("yellow", "green");
+                purple.classList.add(".disappeared");
+                break;
+
+            case 5:
+                computerOptions.push("yellow", "green", "orange");
+                purple.classList.add(".disappeared");
+                break;
+                
+            case 6:
+                computerOptions.push("yellow", "green", "orange", "purple");
+                break;
         }
-        if (difficultyLevel = 3) {
-            computerOptions.push("yellow");
-            purple.classList.add(".disappeared");
-            green.classList.add(".disappeared");
-        };
-        if (difficultyLevel = 4) {
-            computerOptions.push("yellow", "green");
-            purple.classList.add(".disappeared");
-        }
-        if (difficultyLevel = 5) {
-            computerOptions.push("yellow", "green", "orange");
-            purple.classList.add(".disappeared");
-        }
-        if (difficultyLevel = 6) {
-            computerOptions.push("yellow", "green", "orange", "purple");
-        }
+
     }
     // Sounds
     /*
