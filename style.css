@@ -48,13 +48,20 @@
 }
 
 .purple {
-    color: purple;
+    background-color: purple;
 }
 
 .light-purple {
-    color: lavender;
+    background-color: lavender;
 }
 
+.orange{
+    background-color: orange;
+}
+
+.light-orange{
+    background-color: lightsalmon;
+}
 
 .begin-container {
     width: 100%;
