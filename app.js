@@ -6,8 +6,10 @@ const game = () => {
     const green = document.getElementById("green");
     const blue = document.getElementById("blue");
     const purple = document.getElementById("purple");
+    const orange = document.getElementById("orange");
 
     const beginBtn = document.getElementById('begin');
+    const beginContainer = document.getElementById("begin-container");
     const readout = document.getElementById("readout");
 
     const computerOptions = ["red", "blue", "yellow", "green"];
@@ -25,27 +27,31 @@ const game = () => {
 
         switch (difficultyLevel) {
             case 2:
+                computerOptions.splice(2, 2);
                 purple.classList.add(".disappeared");
                 yellow.classList.add(".disappeared");
                 green.classList.add(".disappeared");
+                orange.classList.add(".disappeared");
                 break;
 
             case 3:
-                computerOptions.push("yellow");
+                computerOptions.pop();
                 purple.classList.add(".disappeared");
                 green.classList.add(".disappeared");
+                orange.classList.add("disappeared");
                 break;
 
             case 4:
-                computerOptions.push("yellow", "green");
                 purple.classList.add(".disappeared");
+                orange.classList.add("disappeared");
+
                 break;
 
             case 5:
-                computerOptions.push("yellow", "green", "orange");
+                computerOptions.push("orange");
                 purple.classList.add(".disappeared");
                 break;
-                
+
             case 6:
                 computerOptions.push("yellow", "green", "orange", "purple");
                 break;
