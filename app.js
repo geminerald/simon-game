@@ -205,7 +205,7 @@ const game = () => {
     };
 
     beginBtn.addEventListener('click', startGame);
-    tutBtn.addEventListener('click', ()=>{
+    tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
     })
 };

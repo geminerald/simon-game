@@ -45,6 +45,15 @@
     background-color: royalblue;
 }
 
+.tutorial{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
 .begin-container{
     z-index: 2;
     background-color: #bada55;
