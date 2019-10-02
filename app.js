@@ -53,7 +53,7 @@ const game = () => {
                 break;
 
             case 6:
-                computerOptions.push("yellow", "green", "orange", "purple");
+                computerOptions.push("orange", "purple");
                 break;
         }
 

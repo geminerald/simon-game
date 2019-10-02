@@ -20,14 +20,34 @@
 
 
 /*-----------------------------------------------------page structure*/
+.tutorial-container,
+.begin-container,
+.container{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
 
 .container {
-    width: 80%;
-    height: 80vh;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    z-index: 1;
+    background-color: blueviolet;
+}
+
+.tutorial-container{
+    z-index: 2;
+    background-color: royalblue;
+}
+
+.begin-container{
+    z-index: 3;
+    background-color: #bada55;
 }
 
 .colour {
@@ -39,12 +59,8 @@
 }
 
 .begin-container {
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
     display: flex;
     justify-content: space-around;
-    position: absolute;
     top: 0;
     right:0;
 }
