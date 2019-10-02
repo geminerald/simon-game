@@ -11,6 +11,7 @@ const game = () => {
     const beginBtn = document.getElementById('begin');
     const beginContainer = document.getElementById("begin-container");
     const readout = document.getElementById("readout");
+    const tutBtn = document.getElementById("tutorial-button");
 
     const computerOptions = ["red", "blue", "yellow", "green"];
 
@@ -197,12 +198,15 @@ const game = () => {
     // Start game
 
     function startGame() {
-        beginBtn.classList.add('fadeOut');
+        beginContainer.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
         console.log(`I am running startGame and the game array is ${gameArray}`)
     };
 
     beginBtn.addEventListener('click', startGame);
+    tutBtn.addEventListener('click', ()=>{
+        document.querySelector('.tutorial-container').classList.add('fadeOut');
+    })
 };
 game();
