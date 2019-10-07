@@ -14,7 +14,7 @@ const game = () => {
     const tutBtn = document.getElementById("tutorial-button");
     const difficultySelector = document.getElementById("difficulty");
 
-    const computerOptions = ["red", "blue", "yellow", "green"];
+    let computerOptions = [];
 
     // Game array and score button
 
@@ -24,11 +24,41 @@ const game = () => {
 
     readout.innerHTML = playerScore;
 
-    function setDifficulty(difficultyLevel) {
+    function setDifficulty(level) {
+        console.log("running SEt difficulty");
+        console.log(level);
+        if (level == 2) {
+            computerOptions.push("red", "blue");
+            purple.classList.add("disappeared");
+            yellow.classList.add("disappeared");
+            green.classList.add("disappeared");
+            orange.classList.add("disappeared");
+        };
+        if (level == 3) {
+            computerOptions.push("red", "blue", "yellow");
+            purple.classList.add("disappeared");
+            green.classList.add("disappeared");
+            orange.classList.add("disappeared");
+        };
+        if (level == 4) {
+            computerOptions.push("red", "blue", "yellow", "green");
+            purple.classList.add("disappeared");
+            orange.classList.add("disappeared");
+        };
+        if (level == 5) {
+            computerOptions.push("red", "blue", "yellow", "green", "orange");
+            purple.classList.add("disappeared");
+        }
+        if (level == 6) {
+            computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
+        }
 
-        switch (difficultyLevel) {
+/**
+
+        switch (level) {
             case 2:
-                computerOptions.splice(2, 2);
+                console.log("This is 2");
+                computerOptions.push("red", "blue");
                 purple.classList.add("disappeared");
                 yellow.classList.add("disappeared");
                 green.classList.add("disappeared");
@@ -36,29 +66,32 @@ const game = () => {
                 break;
 
             case 3:
-                computerOptions.pop();
+                computerOptions.push("red", "blue", "yellow");
                 purple.classList.add("disappeared");
                 green.classList.add("disappeared");
                 orange.classList.add("disappeared");
                 break;
 
             case 4:
+                computerOptions.push("red", "blue", "yellow", "green");
                 purple.classList.add("disappeared");
                 orange.classList.add("disappeared");
 
                 break;
 
             case 5:
+                computerOptions.push("red", "blue", "yellow", "green", "purple");
                 computerOptions.push("orange");
                 purple.classList.add("disappeared");
                 break;
 
             case 6:
-                computerOptions.push("orange", "purple");
+                computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
                 break;
-        }
+        }; */
 
-    }
+        console.log("finished set difficulty and the result is" + level);
+    };
 
 
     // Click events
@@ -108,9 +141,6 @@ const game = () => {
     // Random Number Generator and push to array
 
     function computerSelection() {
-
-
-
         console.log(computerOptions);
         const computerNumber = Math.floor(Math.random() * computerOptions.length)
         const computerChoice = computerOptions[computerNumber];
@@ -122,6 +152,27 @@ const game = () => {
     function checkColour(array, index) {
 
         let entry = array[index];
+        /**
+                switch (entry) {
+                    case "blue":
+                        beclicked(blue);
+                        break
+                    case "red":
+                        beclicked(red);
+                    case "orange":
+                        beclicked(orange);
+                        break
+                    case "yellow":
+                        beclicked(yellow);
+                        break
+                    case "green":
+                        beclicked(green);
+                        break
+                    case "purple":
+                        beclicked(purple);
+                        break
+                }*/
+
 
         if (entry === "blue") {
             beClicked(blue);
@@ -173,14 +224,10 @@ const game = () => {
 
     // Start game
 
-    function startGame() {
-
-    };
-
     beginBtn.addEventListener('click', () => {
         let difficultyLevel = difficultySelector.value;
-        setDifficulty(difficultyLevel);
         console.log(difficultyLevel);
+        setDifficulty(difficultyLevel);
         beginContainer.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
