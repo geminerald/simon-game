@@ -7,25 +7,23 @@ const game = () => {
     const blue = document.getElementById("blue");
     const purple = document.getElementById("purple");
     const orange = document.getElementById("orange");
-    
 
-    // Other Selectors
+
+    // Other Element Selectors
     const winModal = document.getElementById("win-modal");
     const loseModal = document.getElementById("lose-modal");
-    const beginContainer = document.getElementById("begin-container");
     const tutBtn = document.getElementById("tutorial-button");
     const difficultySelector = document.getElementById("difficulty");
     const closeWinModal = document.getElementById("close-win-modal");
     const closeLoseModal = document.getElementById("close-lose-modal");
 
-
     // Game arrays and score items
 
     let gameArray = [];
     let playerArray = [];
+    let computerOptions = [];
     let playerScore = 0;
     let targetScore = 0;
-    let computerOptions = [];
 
     function setDifficulty(level) {
         if (level == 2) {
@@ -60,7 +58,6 @@ const game = () => {
         };
 
         /*
-
                 switch (level) {
                     case 2:
                         console.log("This is 2");
@@ -121,7 +118,7 @@ const game = () => {
         beClicked(this);
         id = $(this).attr("id");
         playerArray.push(id);
-        
+
         if (!arrayValidator()) {
             loseModal.style.display = "block";
             gameArray = [];
@@ -142,6 +139,7 @@ const game = () => {
             playerArray = [];
 
         }
+        
     });
 
 
@@ -232,7 +230,7 @@ const game = () => {
 
     // Start game
 
-    
+
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
         let difficultyLevel = difficultySelector.value;
@@ -243,12 +241,12 @@ const game = () => {
     });
 
     //Modal Listeners
-    closeWinModal.addEventListener('click', ()=>{
+    closeWinModal.addEventListener('click', () => {
         winModal.style.display = "none";
     });
-    closeLoseModal.addEventListener('click', ()=>{
+    closeLoseModal.addEventListener('click', () => {
         loseModal.style.display = "none";
     });
-    
+
 };
 game();
