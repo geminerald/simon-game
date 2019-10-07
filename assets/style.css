@@ -16,6 +16,10 @@ body {
     width: 50%;
     margin: auto;
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 
 .selector select {
@@ -30,9 +34,8 @@ body {
 
 /*-----------------------------------------------------page structure*/
 .tutorial-container,
-.begin-container,
 .container {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
@@ -42,9 +45,8 @@ body {
 
 .container {
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    display:flex;
+    flex-flow: column nowrap;
     z-index: 1;
     background-color: blueviolet;
 }
@@ -67,12 +69,26 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: center;
     width: 90%;
+    height:40%;
+    border: 1px solid green;
+}
+
+.welcome, .selector, .foot{
+    height: 20%;
+    border: 1px solid red;
+}
+
+.welcome{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .how-to-play{
-    width: 400px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     text-align: center;
     border: 2px solid white;
     margin: 10px;
@@ -97,7 +113,12 @@ body {
     margin: 10px, 0px, 50px, 0px auto;
 }
 
-
+.foot{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 /*-----------------------------------------------------Location Changes*/
 
 .fadeIn {
