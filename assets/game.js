@@ -12,6 +12,7 @@ const game = () => {
     const beginContainer = document.getElementById("begin-container");
     const readout = document.getElementById("readout");
     const tutBtn = document.getElementById("tutorial-button");
+    const difficultySelector = document.getElementById("difficulty");
 
     const computerOptions = ["red", "blue", "yellow", "green"];
 
@@ -20,37 +21,36 @@ const game = () => {
     let gameArray = [];
     let playerArray = [];
     let playerScore = 0;
-    let difficultyLevel = 4;
 
     readout.innerHTML = playerScore;
 
-    function setDifficulty() {
+    function setDifficulty(difficultyLevel) {
 
         switch (difficultyLevel) {
             case 2:
                 computerOptions.splice(2, 2);
-                purple.classList.add(".disappeared");
-                yellow.classList.add(".disappeared");
-                green.classList.add(".disappeared");
-                orange.classList.add(".disappeared");
+                purple.classList.add("disappeared");
+                yellow.classList.add("disappeared");
+                green.classList.add("disappeared");
+                orange.classList.add("disappeared");
                 break;
 
             case 3:
                 computerOptions.pop();
-                purple.classList.add(".disappeared");
-                green.classList.add(".disappeared");
+                purple.classList.add("disappeared");
+                green.classList.add("disappeared");
                 orange.classList.add("disappeared");
                 break;
 
             case 4:
-                purple.classList.add(".disappeared");
+                purple.classList.add("disappeared");
                 orange.classList.add("disappeared");
 
                 break;
 
             case 5:
                 computerOptions.push("orange");
-                purple.classList.add(".disappeared");
+                purple.classList.add("disappeared");
                 break;
 
             case 6:
@@ -59,15 +59,7 @@ const game = () => {
         }
 
     }
-    // Sounds
-    /*
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav"
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav"
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav"
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav"
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-5.wav"
-            "https://www.pacdv.com/sounds/interface_sound_effects/beep-6.wav"
-    */
+
 
     // Click events
 
@@ -77,29 +69,7 @@ const game = () => {
 
         const sound = new Audio(`./assets/sounds/${colour.id}.mp3`);
         sound.play();
-            sound.volume = 0.2;
-
-/**
-        if (colour === blue) {
-            const sound = new Audio("./assets/sounds/blue.mp3");
-            sound.play();
-            sound.volume = 0.2;
-        };
-        if (colour === yellow) {
-            const sound = new Audio("./assets/sounds/yellow.mp3");
-            sound.play();
-            sound.volume = 0.2;
-        };
-        if (colour === green) {
-            const sound = new Audio("./assets/sounds/green.mp3");
-            sound.play();
-            sound.volume = 0.2;
-        };
-        if (colour === red) {
-            const sound = new Audio("./assets/sounds/red.mp3");
-            sound.play();
-            sound.volume = 0.2;
-        }; */
+        sound.volume = 0.2;
         setTimeout(() => {
             colour.classList.add(`${colour.id}`);
             colour.classList.remove(`light-${colour.id}`);
@@ -204,15 +174,22 @@ const game = () => {
     // Start game
 
     function startGame() {
+
+    };
+
+    beginBtn.addEventListener('click', () => {
+        let difficultyLevel = difficultySelector.value;
+        setDifficulty(difficultyLevel);
+        console.log(difficultyLevel);
         beginContainer.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
         console.log(`I am running startGame and the game array is ${gameArray}`)
-    };
-
-    beginBtn.addEventListener('click', startGame);
+    });
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
+
+
     })
 };
 game();
