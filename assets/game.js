@@ -75,22 +75,22 @@ const game = () => {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
         if (colour === blue) {
-            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-1.wav");
+            const sound = new Audio("./assets/sounds/blue.mp3");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === yellow) {
-            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-3.wav");
+            const sound = new Audio("./assets/sounds/yellow.mp3");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === green) {
-            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-4.wav");
+            const sound = new Audio("./assets/sounds/green.mp3");
             sound.play();
             sound.volume = 0.2;
         };
         if (colour === red) {
-            const sound = new Audio("https://www.pacdv.com/sounds/interface_sound_effects/beep-2.wav");
+            const sound = new Audio("./assets/sounds/red.mp3");
             sound.play();
             sound.volume = 0.2;
         };
