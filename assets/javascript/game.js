@@ -7,8 +7,9 @@ const game = () => {
     const blue = document.getElementById("blue");
     const purple = document.getElementById("purple");
     const orange = document.getElementById("orange");
-
-    const beginBtn = document.getElementById('begin');
+    
+    const winModal = document.getElementById("win-modal");
+    const loseModal = document.getElementById("lose-modal");
     const beginContainer = document.getElementById("begin-container");
     const readout = document.getElementById("readout");
     const tutBtn = document.getElementById("tutorial-button");
@@ -117,14 +118,14 @@ const game = () => {
         id = $(this).attr("id");
         playerArray.push(id);
         if (playerScore == targetScore) {
-            console.log("You win");
+            winModal.style.display = "block";
             gameArray = [];
             playerArray = [];
             beginContainer.classList.add("fadeIn");
             return
         }
         if (!arrayValidator()) {
-            alert("WHoops!");
+            loseModal.style.display = "block";
             gameArray = [];
             playerArray = [];
             playerScore = 0;

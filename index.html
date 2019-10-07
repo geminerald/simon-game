@@ -47,6 +47,39 @@
         <button class="colour purple" id="purple"></button>
     </div>
     <h3 id="readout"></h3>
+    <div id="win-modal" class="modal">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>You Win!</h2>
+              </div>
+              <div class="modal-body">
+                <p>Congratulations</p>
+                <a href="index.html">Try Again?</a>
+              </div>
+              <div class="modal-footer">
+                <h3>Modal Footer</h3>
+              </div>
+            </div>
+          
+          </div>
+          <div id="lose-modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Whoops!</h2>
+                  </div>
+                  <div class="modal-body">
+                    <p>I'm sorry but that's not correct</p>
+                    <p id = "failure-reason"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="index.html">Try Again?</a>>
+                  </div>
+                </div>
+              
+              </div>
     <script type="text/javascript" src="./assets/javascript/jquery.3.4.1.min.js"></script>
     <script type="text/javascript" src="./assets/javascript/game.js"></script>
 </body>
