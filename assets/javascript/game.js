@@ -14,6 +14,10 @@ const game = () => {
     const readout = document.getElementById("readout");
     const tutBtn = document.getElementById("tutorial-button");
     const difficultySelector = document.getElementById("difficulty");
+    const closeWinModal = document.getElementById("close-win-modal");
+    const closeLoseModal = document.getElementById("close-lose-modal");
+
+    
 
     let computerOptions = [];
 
@@ -111,6 +115,9 @@ const game = () => {
             colour.classList.remove(`light-${colour.id}`);
         }, 1000)
     };
+
+
+
     // Main Game Function:
 
     $(".colour").click(function () {
@@ -238,6 +245,15 @@ const game = () => {
         computerSelection();
         iterateThroughArray();
 
-    })
+    });
+
+    //Modal Listeners
+    closeWinModal.addEventListener('click', ()=>{
+        winModal.style.display = "none";
+    });
+    closeLoseModal.addEventListener('click', ()=>{
+        loseModal.style.display = "none";
+    });
+    
 };
 game();
