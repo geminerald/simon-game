@@ -74,6 +74,12 @@ const game = () => {
     function beClicked(colour) {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
+
+        const sound = new Audio(`./assets/sounds/${colour.id}.mp3`);
+        sound.play();
+            sound.volume = 0.2;
+
+/**
         if (colour === blue) {
             const sound = new Audio("./assets/sounds/blue.mp3");
             sound.play();
@@ -93,7 +99,7 @@ const game = () => {
             const sound = new Audio("./assets/sounds/red.mp3");
             sound.play();
             sound.volume = 0.2;
-        };
+        }; */
         setTimeout(() => {
             colour.classList.add(`${colour.id}`);
             colour.classList.remove(`light-${colour.id}`);
