@@ -105,13 +105,15 @@ body {
 
 
 #tutorial-button {
-    background-color: slategray;
-    color: #fafafa;
+    background-color: #fafafa;
+    color: rgb(76, 80, 83);
     width: 20%;
-    height: 10%;
+    height: 5em;
     transition: 1s ease-in-out;
     border-radius: 2em;
     margin: 10px, 0px, 50px, 0px auto;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .foot{
