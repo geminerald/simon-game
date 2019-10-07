@@ -21,76 +21,79 @@ const game = () => {
     let gameArray = [];
     let playerArray = [];
     let playerScore = 0;
+    let targetScore = 10;
 
     readout.innerHTML = playerScore;
 
     function setDifficulty(level) {
-        console.log("running SEt difficulty");
-        console.log(level);
         if (level == 2) {
             computerOptions.push("red", "blue");
             purple.classList.add("disappeared");
             yellow.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
+            targetScore = 2;
         };
         if (level == 3) {
             computerOptions.push("red", "blue", "yellow");
             purple.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
+            targetScore = 3;
         };
         if (level == 4) {
             computerOptions.push("red", "blue", "yellow", "green");
             purple.classList.add("disappeared");
             orange.classList.add("disappeared");
+            targetScore = 4;
         };
         if (level == 5) {
             computerOptions.push("red", "blue", "yellow", "green", "orange");
             purple.classList.add("disappeared");
+            targetScore = 5;
         }
         if (level == 6) {
             computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
+            targetScore = 6;
         }
 
-/**
+        /**
 
-        switch (level) {
-            case 2:
-                console.log("This is 2");
-                computerOptions.push("red", "blue");
-                purple.classList.add("disappeared");
-                yellow.classList.add("disappeared");
-                green.classList.add("disappeared");
-                orange.classList.add("disappeared");
-                break;
+                switch (level) {
+                    case 2:
+                        console.log("This is 2");
+                        computerOptions.push("red", "blue");
+                        purple.classList.add("disappeared");
+                        yellow.classList.add("disappeared");
+                        green.classList.add("disappeared");
+                        orange.classList.add("disappeared");
+                        break;
 
-            case 3:
-                computerOptions.push("red", "blue", "yellow");
-                purple.classList.add("disappeared");
-                green.classList.add("disappeared");
-                orange.classList.add("disappeared");
-                break;
+                    case 3:
+                        computerOptions.push("red", "blue", "yellow");
+                        purple.classList.add("disappeared");
+                        green.classList.add("disappeared");
+                        orange.classList.add("disappeared");
+                        break;
 
-            case 4:
-                computerOptions.push("red", "blue", "yellow", "green");
-                purple.classList.add("disappeared");
-                orange.classList.add("disappeared");
+                    case 4:
+                        computerOptions.push("red", "blue", "yellow", "green");
+                        purple.classList.add("disappeared");
+                        orange.classList.add("disappeared");
 
-                break;
+                        break;
 
-            case 5:
-                computerOptions.push("red", "blue", "yellow", "green", "purple");
-                computerOptions.push("orange");
-                purple.classList.add("disappeared");
-                break;
+                    case 5:
+                        computerOptions.push("red", "blue", "yellow", "green", "purple");
+                        computerOptions.push("orange");
+                        purple.classList.add("disappeared");
+                        break;
 
-            case 6:
-                computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
-                break;
-        }; */
+                    case 6:
+                        computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
+                        break;
+                }; */
 
-        console.log("finished set difficulty and the result is" + level);
     };
 
 
@@ -113,11 +116,14 @@ const game = () => {
     $(".colour").click(function () {
         beClicked(this);
         id = $(this).attr("id");
-        console.log(id);
-        console.log(`this is ${this}`);
-        console.log(this.id);
         playerArray.push(id);
-        console.log(`the player array is ${playerArray}`);
+        if (playerScore == targetScore) {
+            console.log("You win");
+            gameArray = [];
+            playerArray = [];
+            beginContainer.classList.add("fadeIn");
+            return
+        }
         if (!arrayValidator()) {
             alert("WHoops!");
             gameArray = [];
@@ -128,12 +134,11 @@ const game = () => {
             return
         }
         if (playerArray.length == gameArray.length) {
-            console.log("computers turn");
             playerScore++
+            console.log(playerScore);
             computerSelection();
             iterateThroughArray();
             playerArray = [];
-            console.log(`the player array is ${playerArray}`);
         }
     });
 
@@ -141,7 +146,6 @@ const game = () => {
     // Random Number Generator and push to array
 
     function computerSelection() {
-        console.log(computerOptions);
         const computerNumber = Math.floor(Math.random() * computerOptions.length)
         const computerChoice = computerOptions[computerNumber];
         gameArray.push(computerChoice);
@@ -187,6 +191,8 @@ const game = () => {
 
         } else if (entry === "purple") {
             beClicked(purple);
+        } else if (entry === "orange") {
+            beClicked(orange);
         } else {
             console.log("Ya done messed up son");
         }
@@ -200,9 +206,7 @@ const game = () => {
             setInterval(function () {
                 if (i === gameArray.length) {
                     clearInterval(iteration);
-                    console.log("for the love of God - stop!");
                 } else {
-                    console.log(`running iterateThroughArray and the index is ${i} and the game array is ${gameArray}`);
                     checkColour(gameArray, i);
                     i++
                 };
@@ -226,12 +230,10 @@ const game = () => {
 
     beginBtn.addEventListener('click', () => {
         let difficultyLevel = difficultySelector.value;
-        console.log(difficultyLevel);
         setDifficulty(difficultyLevel);
         beginContainer.classList.add('fadeOut');
         computerSelection();
         iterateThroughArray();
-        console.log(`I am running startGame and the game array is ${gameArray}`)
     });
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
