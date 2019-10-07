@@ -229,16 +229,13 @@ const game = () => {
 
     // Start game
 
-    beginBtn.addEventListener('click', () => {
-        let difficultyLevel = difficultySelector.value;
-        setDifficulty(difficultyLevel);
-        beginContainer.classList.add('fadeOut');
-        computerSelection();
-        iterateThroughArray();
-    });
+    
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
-
+        let difficultyLevel = difficultySelector.value;
+        setDifficulty(difficultyLevel);
+        computerSelection();
+        iterateThroughArray();
 
     })
 };

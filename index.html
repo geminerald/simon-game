@@ -18,24 +18,22 @@
                 <div class="how-to-play">The game will make noise</div>
                 <div class="how-to-play">Click the buttons in the same order to progress</div>
                 <div class="how-to-play">Achieve the target score to win! Then try a harder level.</div>
-            </div> <button id="tutorial-button">Got it !</button>
+            </div>
+            <div class="selector">
+                <h2>Choose Difficulty</h2>
+                <p>This will determine how many colours are available and the score you have to reach to win!</p>
+                <select name="Choose Difficulty" id="difficulty">
+                    <option value="2">Very Easy</option>
+                    <option value="3">Easy</option>
+                    <option value="4" selected="selected">Standard</option>
+                    <option value="5">Hard</option>
+                    <option value="6">Very Hard</option>
+                </select>
+            </div>
+            <button id="tutorial-button">Got it !</button>
         </div>
     </div>
-    <div class="begin-container" id="begin-container">
-        <div class="selector">
-            <h2>Choose Difficulty</h2>
-            <p>This will determine how many colours are available and the score you have to reach to win!</p>
-            <select name="Choose Difficulty" id="difficulty">
-                <option value="2">Very Easy</option>
-                <option value="3">Easy</option>
-                <option value="4" selected="selected">Standard</option>
-                <option value="5">Hard</option>
-                <option value="6">Very Hard</option>
-            </select>
-        </div>
-        <button id="begin" class="begin">
-            Begin
-        </button>
+
     </div>
     <div class="container">
         <button class="colour red" id="red"></button>
