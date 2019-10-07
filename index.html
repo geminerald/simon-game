@@ -7,14 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simon</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="tutorial-container">
         <div class="tutorial">
             <h1>Welcome</h1>
-            <p>Here's how you play the game</p>
-            <button id = "tutorial-button">Got it !</button>
+            <div class="tutorials">
+                <div class="how-to-play">The game will make noise</div>
+                <div class="how-to-play">Click the buttons in the same order to progress</div>
+                <div class="how-to-play">Achieve the target score to win! Then try a harder level.</div>
+            </div> <button id="tutorial-button">Got it !</button>
         </div>
     </div>
     <div class="begin-container" id="begin-container">
@@ -24,7 +28,7 @@
             <select name="Choose Difficulty" id="difficulty">
                 <option value="2">Very Easy</option>
                 <option value="3">Easy</option>
-                <option value="4" selected = "selected">Standard</option>
+                <option value="4" selected="selected">Standard</option>
                 <option value="5">Hard</option>
                 <option value="6">Very Hard</option>
             </select>

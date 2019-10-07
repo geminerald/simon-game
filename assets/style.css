@@ -6,14 +6,19 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fafafa;
 
-.selector{
+}
+
+.selector {
     width: 20%;
     margin: auto;
     color: black;
 }
 
-.selector select{
+.selector select {
     width: 80%;
     color: black;
 }
@@ -22,12 +27,12 @@
 /*-----------------------------------------------------page structure*/
 .tutorial-container,
 .begin-container,
-.container{
+.container {
     height: 100vh;
     width: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
 
 
@@ -40,12 +45,12 @@
     background-color: blueviolet;
 }
 
-.tutorial-container{
+.tutorial-container {
     z-index: 3;
     background-color: royalblue;
 }
 
-.tutorial{
+.tutorial {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -54,7 +59,20 @@
 
 }
 
-.begin-container{
+.tutorials{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.how-to-play{
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+
+.begin-container {
     z-index: 2;
     background-color: #bada55;
     display: flex;
@@ -72,14 +90,17 @@
 }
 
 
-.begin {
+.begin,
+#tutorial-button {
     background-color: slategray;
     color: #fafafa;
-    width:20%;
+    width: 20%;
     height: 10%;
     transition: 1s ease-in-out;
     border-radius: 2em;
+    margin: 10px, 0px, 50px, 0px auto;
 }
+
 
 /*-----------------------------------------------------Location Changes*/
 

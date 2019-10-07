@@ -32,29 +32,29 @@ const game = () => {
             yellow.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
-            targetScore = 2;
+            targetScore = 5;
         };
         if (level == 3) {
             computerOptions.push("red", "blue", "yellow");
             purple.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
-            targetScore = 3;
+            targetScore = 10;
         };
         if (level == 4) {
             computerOptions.push("red", "blue", "yellow", "green");
             purple.classList.add("disappeared");
             orange.classList.add("disappeared");
-            targetScore = 4;
+            targetScore = 15;
         };
         if (level == 5) {
             computerOptions.push("red", "blue", "yellow", "green", "orange");
             purple.classList.add("disappeared");
-            targetScore = 5;
+            targetScore = 20;
         }
         if (level == 6) {
             computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
-            targetScore = 6;
+            targetScore = 25;
         }
 
         /**
@@ -102,7 +102,6 @@ const game = () => {
     function beClicked(colour) {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
-
         const sound = new Audio(`./assets/sounds/${colour.id}.mp3`);
         sound.play();
         sound.volume = 0.2;
@@ -191,8 +190,10 @@ const game = () => {
 
         } else if (entry === "purple") {
             beClicked(purple);
+
         } else if (entry === "orange") {
             beClicked(orange);
+
         } else {
             console.log("Ya done messed up son");
         }
