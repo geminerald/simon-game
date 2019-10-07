@@ -8,27 +8,24 @@ const game = () => {
     const purple = document.getElementById("purple");
     const orange = document.getElementById("orange");
     
+
+    // Other Selectors
     const winModal = document.getElementById("win-modal");
     const loseModal = document.getElementById("lose-modal");
     const beginContainer = document.getElementById("begin-container");
-    const readout = document.getElementById("readout");
     const tutBtn = document.getElementById("tutorial-button");
     const difficultySelector = document.getElementById("difficulty");
     const closeWinModal = document.getElementById("close-win-modal");
     const closeLoseModal = document.getElementById("close-lose-modal");
 
-    
 
-    let computerOptions = [];
-
-    // Game array and score button
+    // Game arrays and score items
 
     let gameArray = [];
     let playerArray = [];
     let playerScore = 0;
-    let targetScore = 10;
-
-    readout.innerHTML = playerScore;
+    let targetScore = 0;
+    let computerOptions = [];
 
     function setDifficulty(level) {
         if (level == 2) {
@@ -56,13 +53,13 @@ const game = () => {
             computerOptions.push("red", "blue", "yellow", "green", "orange");
             purple.classList.add("disappeared");
             targetScore = 20;
-        }
+        };
         if (level == 6) {
             computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
             targetScore = 25;
-        }
+        };
 
-        /**
+        /*
 
                 switch (level) {
                     case 2:
@@ -124,28 +121,26 @@ const game = () => {
         beClicked(this);
         id = $(this).attr("id");
         playerArray.push(id);
-        if (playerScore == targetScore) {
-            winModal.style.display = "block";
-            gameArray = [];
-            playerArray = [];
-            beginContainer.classList.add("fadeIn");
-            return
-        }
+        
         if (!arrayValidator()) {
             loseModal.style.display = "block";
             gameArray = [];
             playerArray = [];
             playerScore = 0;
-            computerSelection();
-            iterateThroughArray();
             return
         }
         if (playerArray.length == gameArray.length) {
-            playerScore++
-            console.log(playerScore);
+            playerScore++;
+            if (playerScore == targetScore) {
+                winModal.style.display = "block";
+                gameArray = [];
+                playerArray = [];
+                return
+            }
             computerSelection();
             iterateThroughArray();
             playerArray = [];
+
         }
     });
 
@@ -163,7 +158,7 @@ const game = () => {
     function checkColour(array, index) {
 
         let entry = array[index];
-        /**
+        /*
                 switch (entry) {
                     case "blue":
                         beclicked(blue);

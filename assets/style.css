@@ -12,23 +12,9 @@ body {
 
 }
 
-.selector {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-}
-
-.selector select {
-    width: 80%;
-    color: black;
-    margin: 7px;
-    border-radius: 1em;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+a {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -105,6 +91,24 @@ body {
     border-radius: 1em;
 }
 
+.selector {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selector select {
+    width: 80%;
+    color: black;
+    margin: 7px;
+    border-radius: 1em;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
 
 #tutorial-button {
     background-color: #fafafa;
@@ -222,8 +226,8 @@ body {
     background-color: #fd225f;
 }
 
-.blue {
-    background-color: #612ea7;
+.orange {
+    background-color: #fed245;
 }
 
 .yellow {
@@ -234,12 +238,20 @@ body {
     background-color: #46c1a3;
 }
 
+.blue {
+    background-color: #612ea7;
+}
+
+.purple {
+    background-color: #1f2168;
+}
+
 .light-red {
     background-color: lightcoral;
 }
 
-.light-blue {
-    background-color: lightblue;
+.light-orange {
+    background-color: lightsalmon;
 }
 
 .light-yellow {
@@ -250,20 +262,12 @@ body {
     background-color: lightgreen;
 }
 
-.purple {
-    background-color: #1f2168;
+.light-blue {
+    background-color: lightblue;
 }
 
 .light-purple {
     background-color: lavender;
-}
-
-.orange {
-    background-color: #fed245;
-}
-
-.light-orange {
-    background-color: lightsalmon;
 }
 
 /*-----------------------------------------------------Media Queries*/
