@@ -34,6 +34,8 @@ User Stories
 
 As a User I expect to :
 * have simple instructions.
+* be presented with a simple and intuitive User Interface.
+* be able to engage with the game regardless of my age or tech experience.
 * launch the game quickly.
 * see the sequence I have to follow.
 * follow the sequence by tapping on the coloured buttons.
@@ -46,10 +48,10 @@ Features
 
 ### Current Features
 
-* Functional Game which is instantly recognisable to fans of the classic.
+* Functional Game which is instantly recognisable to fans of the classic while being engaging to new players.
 * Variable difficulty level allowing for all levels of player.
-* From 2 - 6 different colours which could be added to the session.
-* Target scores from 5 - 25 to ensure that casual and competitive gamers are engaged.
+* Any option from 2 - 6 buttons per game.
+* Target scores from 5 - 25 to ensure that both casual and competitive gamers are engaged.
 
 
 ### Potential Features
@@ -65,11 +67,23 @@ Design
 
 ### Colours
 * The colours were a key component of this game as the game is based on a rainbow. From the conception of the project I decided to take the classic Simon game with four colours and give the player a wider variety. As such there are six colours in the game with four being the default. 
-* The colours represent the rainbow with six basic colours being represented. Initially the generic colours were used, however when the project was close to completion these were updated with more vibrant colours while still keeping the sense of a rainbow alive. 
+* The colours represent the rainbow with six basic colours being represented. Initially more generic colours were used, however when the project was close to completion these were updated with more vibrant colours while still keeping the sense of a rainbow alive. 
 
 ### Fonts
 
 * Poppins is the font used throughout - as a simplistic and modern sans-serif font it is in keeping with the style of the game and is very simple to read for any user. 
+
+### Style
+
+* Elements were given rounder corners to soften the look of the project and ensure that it kept the feeling of being a simlpe "app style" game.
+
+* The focus of the game is intended to be the buttons at the centre so efforts were taken to minimise distraction from this. The Tutorial screen and Modals were created in a neutral blue colour and the background was kept to an off- white colour to ensure that they did not distract from the focus of the game beig on the buttons.
+
+### Audio
+
+* The audio files used are a series of notes played on a xylophone. These were taken from [Freesound](www.freesound.org).
+
+* Initially placeholder sounds were used but after receiving feedback that they were very detrimental to the overall experience they were upgraded as a priority.
 
 
 Technologies Used
@@ -78,11 +92,11 @@ Technologies Used
 * HTML
 * CSS
 * JavaScript
-* jQuery
-* Balsamiq
-* Affinity Photo
-* GitHub
-* Google Fonts
+* [jQuery](https://jquery.com)
+* [Balsamiq](https://balsamiq.com)
+* [Affinity Photo](https://affinity.serif.com/en-us/)
+* [GitHub](https://github.com)
+* [Google Fonts](https://fonts.google.com)
 
 
 
@@ -91,8 +105,8 @@ Testing
 
 ### User Testing
 
-* Hundreds of games were played by the developer 
-* Testing was performed by a variety of users from various ages
+* Games were played by the developer at each stage of the development process.
+* Testing was performed by a variety of users from various ages.
 * Testing was also performed by friends of the developer, including one who works in the field.
 
 ### Bugs
@@ -120,6 +134,7 @@ To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://git
 6. On selecting Master Branch the page is refreshed, Rainbow Simon is then deployed. 
 7. Scroll back down to **GitHub Pages** to retrieve the link to the deployed site.
 
+The game can also be played [here](geminerald.github.io/simon-game)
 
 #### Content
 
@@ -132,6 +147,8 @@ To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://git
 
 *  The colour scheme was taken from [Astelles Colors](https://www.astellescolors.com/2017/08/01/color-inspiration-color-play/)
 *  The Image used was taken from [Pexels](https://www.pexels.com)
+
+* The audio files were taken from [Freesound](www.freesound.org)
 
 #### Acknowledgements
 
