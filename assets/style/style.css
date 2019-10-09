@@ -89,7 +89,7 @@ a {
 }
 
 .colour {
-    height: 8em;
+    min-height: 8em;
     width: 80%;
     margin: auto;
     cursor: pointer;
@@ -302,7 +302,7 @@ a {
 /*  Media Queries  -----------------------------------------------------  Media Queries*/
 @media only screen and (max-height: 1000px) {
     .colour {
-        height: 6em;
+        min-height: 6em;
     }
 }
 

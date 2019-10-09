@@ -27,7 +27,9 @@ const game = () => {
     let targetScore = 0;
     /**
      * Sets the difficulty level based off the users selection
-     * @param {*} level 
+     * @param {*} level is the user selected difficulty level in 
+     * numeric form from the selector in the main page
+     * 
      */
     function setDifficulty(level) {
         if (level == 2) {
@@ -36,7 +38,7 @@ const game = () => {
             yellow.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
-            targetScore = 1;
+            targetScore = 5;
         };
         if (level == 3) {
             computerOptions.push("red", "blue", "yellow");
