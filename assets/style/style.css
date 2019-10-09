@@ -301,7 +301,7 @@ a {
 /*  Media Queries  -----------------------------------------------------  Media Queries*/
 @media only screen and (max-height: 1000px) {
     .colour {
-        height: 7em;
+        height: 6em;
     }
 }
 
