@@ -42,7 +42,7 @@ a {
 
 .tutorial-container {
     z-index: 3;
-    background-color: royalblue;
+    background-color: #4169E1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -168,10 +168,11 @@ a {
 
 
 .close {
-    color: white;
+    color: #fafafa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+
 }
 
 .close:hover,
@@ -183,19 +184,19 @@ a {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: royalblue;
-    color: white;
+    background-color: #4169E1;
+    color: #fafafa;
 }
 
 .modal-body {
     padding: 2px 16px;
-    color: royalblue;
+    color: #4169E1;
 }
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: royalblue;
-    color: white;
+    background-color: #4169E1;
+    color: #fafafa;
 }
 
 /* Style Changes -----------------------------------------------------  Style Changes*/

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simon</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="icon" href="./assets/images/icon.jpg">
 </head>
 
@@ -49,12 +49,12 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <span id="close-win-modal" class="close">&times;</span>
+                <span id="close-win-modal" class="close"><a href="index.html">&times;</a></span>
                 <h2>You Win!</h2>
             </div>
             <div class="modal-body">
                 <p>Congratulations, you achielved the target score!</p>
-                <a href="index.html">Try Again?</a>
+                <a class = "modal-button" href="index.html">Try Again?</a>
             </div>
             <div class="modal-footer">
                 <h3>Well Done</h3>
@@ -65,7 +65,7 @@
     <div id="lose-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span id="close-lose-modal" class="close">&times;</span>
+                <span id="close-lose-modal" class="close"><a href="index.html">&times;</a></span>
                 <h2>Whoops!</h2>
             </div>
             <div class="modal-body">
@@ -73,7 +73,7 @@
                 <p id="failure-reason"></p>
             </div>
             <div class="modal-footer">
-                <a href="index.html">Try Again?</a>
+                <a class = "modal-button" href="index.html">Try Again?</a>
             </div>
         </div>
 
