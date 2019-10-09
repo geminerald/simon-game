@@ -6,7 +6,7 @@ My take on the classic Simon game - upated for the 21st Century. Featuring moder
 UX
 ------------------------
 
-The website is designed to entice users with the home page and help them quickly zero in on the services they want to use and how they can book them.
+The game is designed to be straightforward to grasp and engaging. Simplicity is built into the design - there are very few controls and little room for confusion.
 
 * A User can be directed to the page in a variety of ways, including online search or by the user's social media channels.
 * Once there they are presented with an inspirational message and directed to the Services page with a button to 'begin their journey' - alternatively they have the full options available to them on the Nav bar if they have visited before or know what they are looking for.
@@ -14,6 +14,11 @@ The website is designed to entice users with the home page and help them quickly
 * If they are browsing various options they can view the pricelist page from any page using the nav link at the top of all pages, this will take them to the prices page which will give them a more detailed breakdown of all the times and services available.
 
 As part of this design process I used [Figma](https://www.figma.com) to structure the layout of the site and the individual pages.
+
+User Stories
+------------------
+
+* John is 60, he played Simon as a child and would love to recreate that feeling
 
 Features
 ------------------
