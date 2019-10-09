@@ -197,7 +197,8 @@ a {
 }
 
 .modal-footer a,
-#win-modal-button {
+#win-modal-button,
+#lose-modal-button {
     padding: 2px 16px;
     background-color: #4169E1;
     color: #fafafa;

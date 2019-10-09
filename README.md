@@ -39,6 +39,7 @@ As a User I expect to :
 * follow the sequence by tapping on the coloured buttons.
 * know when I have won or lost the game.
 * restart the game afterwards.
+* be able to alter the difficulty after each game.
 
 Features
 ------------------
@@ -56,6 +57,20 @@ Features
 * Allowing for separate selection for each of "Number of Colours" and "Target Score"
 * "Legendary Difficulty level which would speed up the iteration or alter the colours to make it exceptionally challenging.
 * Multiplayer support allowing people to play the game remotely - where one player will take half the colours and the other the other half, further increasing difficulty and engagement. 
+* An Unending mode where there is no target score -  the user is simply trying to hit a new "High Score" for getting the largest sequence they can. 
+
+
+Design
+-------------------
+
+### Colours
+* The colours were a key component of this game as the game is based on a rainbow. From the conception of the project I decided to take the classic Simon game with four colours and give the player a wider variety. As such there are six colours in the game with four being the default. 
+* The colours represent the rainbow with six basic colours being represented. Initially the generic colours were used, however when the project was close to completion these were updated with more vibrant colours while still keeping the sense of a rainbow alive. 
+
+### Fonts
+
+* Poppins is the font used throughout - as a simplistic and modern sans-serif font it is in keeping with the style of the game and is very simple to read for any user. 
+
 
 Technologies Used
 ------------
@@ -73,6 +88,12 @@ Technologies Used
 
 Testing
 --------------
+
+### User Testing
+
+* Hundreds of games were played by the developer 
+* Testing was performed by a variety of users from various ages
+* Testing was also performed by friends of the developer, including one who works in the field.
 
 ### Bugs
 
@@ -99,7 +120,6 @@ To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://git
 6. On selecting Master Branch the page is refreshed, Rainbow Simon is then deployed. 
 7. Scroll back down to **GitHub Pages** to retrieve the link to the deployed site.
 
----------------------------
 
 #### Content
 

@@ -15,7 +15,7 @@
         <div class="tutorial">
             <h1 class="welcome">Welcome</h1>
             <div class="tutorials">
-                <div class="how-to-play">When you click the button below, the coloured buttons will light up in a
+                <div class="how-to-play">The coloured buttons will light up in a
                     sequence.</div>
                 <div class="how-to-play">Click or tap the buttons in the same order to progress</div>
                 <div class="how-to-play">Achieve the target score to win! Then try a harder level.</div>
@@ -66,7 +66,7 @@
                 </select>
             </div>
             <div class="modal-footer">
-                <button class="modal-button" id = "win-modal-button">Try Again!</a>
+                <button class="modal-button" id = "win-modal-button">Play Again!</a>
             </div>
         </div>
 
@@ -78,10 +78,17 @@
                 <h2>Whoops!</h2>
             </div>
             <div class="modal-body">
-                <p>I'm sorry but that's not correct</p>
+                <p>I'm sorry but that's not correct. Why not change the difficulty and play again.</p>
+                <select name="Choose Difficulty" id="lose-difficulty">
+                    <option value="2">Very Easy</option>
+                    <option value="3">Easy</option>
+                    <option value="4" selected="selected">Standard</option>
+                    <option value="5">Hard</option>
+                    <option value="6">Very Hard</option>
+                </select>
             </div>
             <div class="modal-footer">
-                <a class="modal-button" href="index.html">Try Again?</a>
+                <button class="modal-button" id = "lose-modal-button">Play Again?</a>
             </div>
         </div>
 

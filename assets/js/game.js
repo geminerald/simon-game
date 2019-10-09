@@ -12,11 +12,16 @@ const game = () => {
     const winModal = document.getElementById("win-modal");
     const loseModal = document.getElementById("lose-modal");
     const tutBtn = document.getElementById("tutorial-button");
-    const difficultySelector = document.getElementById("difficulty");
     const closeWinModal = document.getElementById("close-win-modal");
     const closeLoseModal = document.getElementById("close-lose-modal");
     const winModalBtn = document.getElementById("win-modal-button");
+    const loseModalBtn = document.getElementById("lose-modal-button");
+    
+
+    // Selector Variables
+    const difficultySelector = document.getElementById("difficulty");
     const winDifficulty = document.getElementById("win-difficulty");
+    const loseDifficulty = document.getElementById("lose-difficulty");
 
     // Game arrays and score items
 
@@ -260,6 +265,20 @@ const game = () => {
         blue.classList.remove("disappeared");
         purple.classList.remove("disappeared");
         setDifficulty(winDiff);
+        computerSelection();
+        iterateThroughArray();
+    });
+
+    loseModalBtn.addEventListener('click', () => {
+        loseModal.style.display = "none";
+        let loseDiff = loseDifficulty.value;
+        red.classList.remove("disappeared");
+        orange.classList.remove("disappeared");
+        yellow.classList.remove("disappeared");
+        green.classList.remove("disappeared");
+        blue.classList.remove("disappeared");
+        purple.classList.remove("disappeared");
+        setDifficulty(loseDiff);
         computerSelection();
         iterateThroughArray();
     });
