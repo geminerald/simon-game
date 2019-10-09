@@ -109,7 +109,7 @@ Testing
 Deployment
 -------------------
 
-This project was developed using the [Visual Studio Code](https://code.visualstudio.com), committed to git and pushed to GitHub by downloading git and pushing via the terminal in Visual Studio Code.
+This project was developed using [Visual Studio Code](https://code.visualstudio.com), committed to git and pushed to GitHub by downloading git and pushing via the terminal within Visual Studio Code.
 
 To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://github.com/geminerald/simon-game), the following steps were taken: 
 1. Log into GitHub. 

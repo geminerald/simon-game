@@ -16,7 +16,7 @@ const game = () => {
     const closeLoseModal = document.getElementById("close-lose-modal");
     const winModalBtn = document.getElementById("win-modal-button");
     const loseModalBtn = document.getElementById("lose-modal-button");
-    
+
 
     // Selector Variables
     const difficultySelector = document.getElementById("difficulty");
@@ -159,9 +159,7 @@ const game = () => {
 
         } else if (entry === "orange") {
             beClicked(orange);
-
         }
-
     };
 
     /**
@@ -204,9 +202,8 @@ const game = () => {
                     i++
                 };
             }, 1500);
-        
-    };
 
+    };
 
     /**
      * Function to check if the manually created player array 
@@ -255,6 +252,12 @@ const game = () => {
         loseModal.style.display = "none";
     });
 
+    /**
+     * Modal Listeners
+     * 
+     * When a user wins or loses these will let them change the difficulty 
+     * and restart the game.
+     */
     winModalBtn.addEventListener('click', () => {
         winModal.style.display = "none";
         let winDiff = winDifficulty.value;
