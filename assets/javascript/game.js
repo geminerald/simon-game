@@ -32,7 +32,7 @@ const game = () => {
             yellow.classList.add("disappeared");
             green.classList.add("disappeared");
             orange.classList.add("disappeared");
-            targetScore = 5;
+            targetScore = 1;
         };
         if (level == 3) {
             computerOptions.push("red", "blue", "yellow");
