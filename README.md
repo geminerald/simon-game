@@ -3,6 +3,16 @@ Rainbow Simon
 
 My take on the classic Simon game - upated for the 21st Century. Featuring modernised, mobile-friendly User Interface, simple tutorials and additional challenges offered by the variable difficulty level which increments the number of potential options and the target score - ensuring more replayability than the classic. 
 
+[Play Rainbow Simon](https://geminerald.github.io/simon-game/)
+
+Goals
+------------------------
+
+This project is designed to be:
+* a simple game
+* with high replayability
+* which is equally accessible to all ages 
+
 UX
 ------------------------
 
@@ -15,17 +25,20 @@ The game is designed to be straightforward to grasp and engaging. Simplicity is 
 * The users input is to click on the colourful buttons, there are no other controls. 
 * The game repeats as such until the user either achieves the target score or makes an error, at which point a pop-up will appear to let them know and invite them to try again.
 
-As part of this design process I used [Balsamiq]https://balsamiq.com/) to structure the layout of the game.
+As part of this design process I used [Balsamiq](https://balsamiq.com/) to structure the layout of the game.
+
+The mockups can be located in the mockups folder of this project.
 
 User Stories
 ------------------
 
-* As a User I expect to have simple instructions.
-* As a User I expect to be able to launch the game quickly.
-* As a User I expect to be able to see the sequence I have to follow.
-* As a User I expect to be able to follow the sequence.
-* As a User I expect to be able to know if I have won or lost the game.
-* As a User I expect to be able to restart the game afterwards.
+As a User I expect to :
+* have simple instructions.
+* launch the game quickly.
+* see the sequence I have to follow.
+* follow the sequence by tapping on the coloured buttons.
+* know when I have won or lost the game.
+* restart the game afterwards.
 
 Features
 ------------------
@@ -49,11 +62,13 @@ Technologies Used
 
 * HTML
 * CSS
-* jQuery
 * JavaScript
+* jQuery
 * Balsamiq
 * Affinity Photo
 * GitHub
+* Google Fonts
+
 
 
 Testing
@@ -88,6 +103,8 @@ To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://git
 
 #### Content
 
+* All code written by the Author. 
+
 *  I used W3 Schools extensively, including their validators for both HTML and CSS.
 
 
@@ -100,4 +117,5 @@ To deploy Rainbow Simon to GitHub Pages from its [GitHub repository](https://git
 
 * I would like to thank Simen Daehlin for his help and feedback throughout.
 * I would also like to thank the Code Institute Tutor Support team for their help and patience.
-* Special thanks to Shane Quinn for his thorough testing and advice on how they can be fixed.
+* Thanks to my friends and family who tested the game to the point of frustration.
+* Special thanks to Shane Quinn for his especially thorough testing and advice, support and encouragement. 
