@@ -198,7 +198,9 @@ const game = () => {
 
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
-        $('html, body').animate({ scrollTop: 0 }, 'fast');
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'fast');
         let difficultyLevel = difficultySelector.value;
         setDifficulty(difficultyLevel);
         computerSelection();
