@@ -197,13 +197,13 @@ a {
     text-align: center;
 }
 
-.modal-footer{
+.modal-footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.modal-footer a{
+.modal-footer a {
     padding: 2px 16px;
     background-color: #4169E1;
     color: #fafafa;
@@ -211,7 +211,7 @@ a {
     text-decoration: none;
 }
 
-.modal-button{
+.modal-button {
     min-height: 2em;
     min-width: 5em;
     border-radius: 3em;
@@ -227,7 +227,7 @@ a {
     color: #fafafa;
 }
 
-.win-image{
+.win-image {
     max-width: 20em;
     max-height: 20em;
 }

@@ -24,7 +24,10 @@ const game = () => {
     let computerOptions = [];
     let playerScore = 0;
     let targetScore = 0;
-
+    /**
+     * Sets the difficulty level based off the users selection
+     * @param {*} level 
+     */
     function setDifficulty(level) {
         if (level == 2) {
             computerOptions.push("red", "blue");
@@ -56,48 +59,14 @@ const game = () => {
             computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
             targetScore = 25;
         };
-
-        /*
-                switch (level) {
-                    case 2:
-                        console.log("This is 2");
-                        computerOptions.push("red", "blue");
-                        purple.classList.add("disappeared");
-                        yellow.classList.add("disappeared");
-                        green.classList.add("disappeared");
-                        orange.classList.add("disappeared");
-                        break;
-
-                    case 3:
-                        computerOptions.push("red", "blue", "yellow");
-                        purple.classList.add("disappeared");
-                        green.classList.add("disappeared");
-                        orange.classList.add("disappeared");
-                        break;
-
-                    case 4:
-                        computerOptions.push("red", "blue", "yellow", "green");
-                        purple.classList.add("disappeared");
-                        orange.classList.add("disappeared");
-
-                        break;
-
-                    case 5:
-                        computerOptions.push("red", "blue", "yellow", "green", "purple");
-                        computerOptions.push("orange");
-                        purple.classList.add("disappeared");
-                        break;
-
-                    case 6:
-                        computerOptions.push("red", "blue", "yellow", "green", "purple", "orange");
-                        break;
-                }; */
-
     };
 
 
     // Click events
-
+    /**
+     * Mades audio and visual changes when a colour element is clicked
+     * @param {*} colour 
+     */
     function beClicked(colour) {
         colour.classList.add(`light-${colour.id}`);
         colour.classList.remove(`${colour.id}`);
@@ -112,7 +81,15 @@ const game = () => {
 
 
 
-    // Main Game Function:
+
+    /**
+     * Main Game Function:
+     * Function adds a listener to all colours buttons which when clicked will
+     * light them up and push the colour to the player array which is 
+     * simultaneously compared to the computer/ game array. Also checks
+     * if the user has won the game at each click. Will then add a new 
+     * element to the game array.
+     */
 
     $(".colour").click(function () {
         beClicked(this);
@@ -139,44 +116,30 @@ const game = () => {
             playerArray = [];
 
         }
-        
+
     });
 
 
-    // Random Number Generator and push to array
-
+    /**
+     * Random Number Generator and push to array
+     * adds a random selection to the game array. 
+     */
     function computerSelection() {
         const computerNumber = Math.floor(Math.random() * computerOptions.length)
         const computerChoice = computerOptions[computerNumber];
         gameArray.push(computerChoice);
     };
 
-    //  iterate through Array automatically
+    /**
+     * Helper function which will check the game array and click
+     * the buttons in order. 
+     * @param {*} array 
+     * @param {*} index 
+     */
 
     function checkColour(array, index) {
 
         let entry = array[index];
-        /*
-                switch (entry) {
-                    case "blue":
-                        beclicked(blue);
-                        break
-                    case "red":
-                        beclicked(red);
-                    case "orange":
-                        beclicked(orange);
-                        break
-                    case "yellow":
-                        beclicked(yellow);
-                        break
-                    case "green":
-                        beclicked(green);
-                        break
-                    case "purple":
-                        beclicked(purple);
-                        break
-                }*/
-
 
         if (entry === "blue") {
             beClicked(blue);
@@ -195,13 +158,15 @@ const game = () => {
         } else if (entry === "orange") {
             beClicked(orange);
 
-        } else {
-            console.log("Ya done messed up son");
         }
 
     };
 
-    // Iterate through array
+    /**
+     * helper function to iterate through the game array and
+     * uses the Check Colour function (above) to click on the 
+     * correct elements.
+     */
     const iterateThroughArray = () => {
         let i = 0;
         let iteration =
@@ -216,7 +181,11 @@ const game = () => {
     };
 
 
-    // check if player array matches with computer array
+    /**
+     * Function to check if the manually created player array 
+     * matches the game array. returns true by default, will return
+     * false if user makes an error. 
+     */
 
     function arrayValidator() {
         for (i = 0; i < playerArray.length; i++) {
@@ -228,7 +197,11 @@ const game = () => {
     };
     // Game Order
 
-    // Start game
+    /**
+     *  Start game
+     * Event listener on tutorial page button which starts a new game
+     * when the button is clicked. 
+     * */
 
 
     tutBtn.addEventListener('click', () => {
@@ -240,7 +213,11 @@ const game = () => {
 
     });
 
-    //Modal Listeners
+    /**
+     * Modal Listeners
+     * Listeners applied to modals to remove them when 
+     * user clicks on them
+     */
     closeWinModal.addEventListener('click', () => {
         winModal.style.display = "none";
     });
