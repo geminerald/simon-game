@@ -106,17 +106,42 @@ Testing
 ### User Testing
 
 * Games were played by the developer at each stage of the development process.
-* Testing was performed by a variety of users from various ages.
+* Testing was undertaken on a variety of devices and browsers.
+* Testing was performed by a variety of other users from various ages.
 * Testing was also performed by friends of the developer, including one who works in the field.
 
+#### To test against the user goals:
+
+As a User I expect to :
+* have simple instructions.
+    - The instructions for the game were initially on two pages but were condensed into one for the sake of simplification.
+* be presented with a simple and intuitive User Interface.
+    - The User Interface was kept to very simple buttons and throughout testing no user experienced confusion in relation to the User Interface.
+* be able to engage with the game regardless of my age or tech experience.
+    - The test audience ranged from 15 years to 70 years and from users who had lower than average experience to technology professionals.
+* launch the game quickly.
+    - Every effort has been made to keep code concise throughout which helps it load quickly. From the design perspective the introduction and tutorial was kept to a single page to assist in this process.
+* see the sequence I have to follow.
+    - The game sequence was tested extensively throughout and is currently working as designed. 
+* follow the sequence by tapping on the coloured buttons.
+    - When the game sequence has completed the user can repeat it simply and in an obvious way.
+* know when I have won or lost the game.
+    -  Modals appear on all devices and browsers which alert the user when they have won or lost the game and give them the option to try again.
+* restart the game afterwards.
+    - Upon winning or losing the user is given the option to Play Again and select a new difficulty level.
+* be able to alter the difficulty after each game.
+    - The user has the option to alter the difficulty after a win or loss. This feature was implemented relatively late in the development after user testing from a subject matter expert. 
+
+
 ### Bugs
+
+* A bug was preventing the Iterate Through Array function from working correctly as it was originally created using a Set Timeout function. As such it would not iterate correctly and would click all elements in the array simultaneaously. This was resolved by changing the function to a Set Interval function with a nested Set Tiemout one. 
 
 * A bug was found where the player could click on elements while the game was iterating through it's own array, this would restart the process while not interrupting the function so the function would run multiple times simultaneously. This was resolved by disabling all buttons on the page for the duration of the function and then eneabling them again when it was finished.
 
 * A bug was found where on mobile devices the user would have to scroll down to click on the button to start the game, this would then start the game but the player would not be able to see the top of the screen. This was resolved by adding a function to the functions that ran when this button was clicked which moved the user to the top of the page.
 
-* Due to an oversight in design the X to close the modal which popped up when the user lost the game would not restart the game or do anything, essentially the user would have to reload the page to continue to play. This was resolved by changing the X to a link to the home page.
-
+* Due to an oversight in design the X to close the modal which popped up when the user lost the game would not restart the game or do anything, essentially the user would have to reload the page to continue to play. This was resolved by changing the X to a function that reset the game.
 
 
 
