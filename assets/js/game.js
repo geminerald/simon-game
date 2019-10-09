@@ -8,7 +8,6 @@ const game = () => {
     const purple = document.getElementById("purple");
     const orange = document.getElementById("orange");
 
-
     // Other Element Selectors
     const winModal = document.getElementById("win-modal");
     const loseModal = document.getElementById("lose-modal");
@@ -61,7 +60,6 @@ const game = () => {
         };
     };
 
-
     // Click events
     /**
      * Mades audio and visual changes when a colour element is clicked
@@ -78,9 +76,6 @@ const game = () => {
             colour.classList.remove(`light-${colour.id}`);
         }, 1000)
     };
-
-
-
 
     /**
      * Main Game Function:
@@ -102,7 +97,7 @@ const game = () => {
             playerArray = [];
             playerScore = 0;
             return
-        }
+        };
         if (playerArray.length == gameArray.length) {
             playerScore++;
             if (playerScore == targetScore) {
@@ -114,11 +109,8 @@ const game = () => {
             computerSelection();
             iterateThroughArray();
             playerArray = [];
-
-        }
-
+        };
     });
-
 
     /**
      * Random Number Generator and push to array
@@ -206,6 +198,7 @@ const game = () => {
 
     tutBtn.addEventListener('click', () => {
         document.querySelector('.tutorial-container').classList.add('fadeOut');
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         let difficultyLevel = difficultySelector.value;
         setDifficulty(difficultyLevel);
         computerSelection();
