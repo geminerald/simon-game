@@ -111,6 +111,7 @@ const game = () => {
             computerSelection();
             iterateThroughArray();
             playerArray = [];
+            //enableBtns();
         };
     });
 
@@ -157,21 +158,46 @@ const game = () => {
     };
 
     /**
+     * disable and enable all buttons on the page
+     */
+
+    const disableBtns = () => {
+        red.disabled = true;
+        orange.disabled = true;
+        yellow.disabled = true;
+        green.disabled = true;
+        blue.disabled = true;
+        purple.disabled = true;
+    };
+
+    const enableBtns = () => {
+        red.disabled = false;
+        orange.disabled = false;
+        yellow.disabled = false;
+        green.disabled = false;
+        blue.disabled = false;
+        purple.disabled = false;
+    };
+
+    /**
      * helper function to iterate through the game array and
      * uses the Check Colour function (above) to click on the 
      * correct elements.
      */
     const iterateThroughArray = () => {
+        disableBtns();
         let i = 0;
         let iteration =
             setInterval(function () {
                 if (i === gameArray.length) {
                     clearInterval(iteration);
+                    enableBtns();
                 } else {
                     checkColour(gameArray, i);
                     i++
                 };
             }, 1500);
+        
     };
 
 
@@ -207,7 +233,7 @@ const game = () => {
         setDifficulty(difficultyLevel);
         computerSelection();
         iterateThroughArray();
-
+        enableBtns();
     });
 
     /**
@@ -222,7 +248,7 @@ const game = () => {
         loseModal.style.display = "none";
     });
 
-    winModalBtn.addEventListener('click',()=>{
+    winModalBtn.addEventListener('click', () => {
         winModal.style.display = "none";
         let winDiff = winDifficulty.value;
         red.classList.remove("disappeared");
