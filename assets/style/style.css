@@ -106,9 +106,9 @@ a {
     align-items: center;
 }
 
-.selector select {
+ select {
     width: 80%;
-    color: black;
+    color: #000000;
     margin: 7px;
     border-radius: 1em;
     font-family: 'Poppins', sans-serif;
@@ -196,7 +196,8 @@ a {
     align-items: center;
 }
 
-.modal-footer a {
+.modal-footer a,
+#win-modal-button {
     padding: 2px 16px;
     background-color: #4169E1;
     color: #fafafa;
