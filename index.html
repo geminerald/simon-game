@@ -57,9 +57,16 @@
                 <p>Congratulations, you achielved the target score!</p>
                 <img src="assets/images/balloon.jpg" class="win-image" alt="Image of a colourful balloon">
                 <p>Why not try a harder level?</p>
+                <select name="Choose Difficulty" id="win-difficulty">
+                    <option value="2">Very Easy</option>
+                    <option value="3">Easy</option>
+                    <option value="4" selected="selected">Standard</option>
+                    <option value="5">Hard</option>
+                    <option value="6">Very Hard</option>
+                </select>
             </div>
             <div class="modal-footer">
-                <a class="modal-button" href="index.html">Try Again!</a>
+                <button class="modal-button" id = "win-modal-button">Try Again!</a>
             </div>
         </div>
 

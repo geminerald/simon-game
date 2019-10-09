@@ -15,6 +15,8 @@ const game = () => {
     const difficultySelector = document.getElementById("difficulty");
     const closeWinModal = document.getElementById("close-win-modal");
     const closeLoseModal = document.getElementById("close-lose-modal");
+    const winModalBtn = document.getElementById("win-modal-button");
+    const winDifficulty = document.getElementById("win-difficulty");
 
     // Game arrays and score items
 
@@ -218,6 +220,20 @@ const game = () => {
     });
     closeLoseModal.addEventListener('click', () => {
         loseModal.style.display = "none";
+    });
+
+    winModalBtn.addEventListener('click',()=>{
+        winModal.style.display = "none";
+        let winDiff = winDifficulty.value;
+        red.classList.remove("disappeared");
+        orange.classList.remove("disappeared");
+        yellow.classList.remove("disappeared");
+        green.classList.remove("disappeared");
+        blue.classList.remove("disappeared");
+        purple.classList.remove("disappeared");
+        setDifficulty(winDiff);
+        computerSelection();
+        iterateThroughArray();
     });
 
 };

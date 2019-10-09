@@ -15,12 +15,17 @@ The game is designed to be straightforward to grasp and engaging. Simplicity is 
 * The users input is to click on the colourful buttons, there are no other controls. 
 * The game repeats as such until the user either achieves the target score or makes an error, at which point a pop-up will appear to let them know and invite them to try again.
 
-As part of this design process I used [Figma](https://www.figma.com) to structure the layout of the site and the individual pages.
+As part of this design process I used [Balsamiq]https://balsamiq.com/) to structure the layout of the game.
 
 User Stories
 ------------------
 
-* John is 60, he played Simon as a child and would love to recreate that feeling
+* As a User I expect to have simple instructions.
+* As a User I expect to be able to launch the game quickly.
+* As a User I expect to be able to see the sequence I have to follow.
+* As a User I expect to be able to follow the sequence.
+* As a User I expect to be able to know if I have won or lost the game.
+* As a User I expect to be able to restart the game afterwards.
 
 Features
 ------------------
@@ -46,6 +51,8 @@ Technologies Used
 * CSS
 * jQuery
 * JavaScript
+* Balsamiq
+* Affinity Photo
 
 
 Testing
