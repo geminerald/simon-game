@@ -92,10 +92,10 @@ Technologies Used
 * HTML
 * CSS
 * JavaScript
+* Git
 * [jQuery](https://jquery.com)
 * [Balsamiq](https://balsamiq.com)
 * [Affinity Photo](https://affinity.serif.com/en-us/)
-* [GitHub](https://github.com)
 * [Google Fonts](https://fonts.google.com)
 
 
@@ -177,7 +177,7 @@ The game can also be played [here](geminerald.github.io/simon-game)
 
 #### Acknowledgements
 
-* I would like to thank Simen Daehlin for his help and feedback throughout.
+* I would like to thank [Simen Daehlin](https://www.github.com/Eventyret) for his help and extensive and honest feedback throughout.
 * I would also like to thank the Code Institute Tutor Support team for their help and patience.
 * Thanks to my friends and family who tested the game to the point of frustration.
-* Special thanks to Shane Quinn for his especially thorough testing and advice, support and encouragement. 
+* Special thanks to [Shane Quinn](https://www.linkedin.com/in/shanequinn/) for his especially thorough testing and advice, support and encouragement. 
